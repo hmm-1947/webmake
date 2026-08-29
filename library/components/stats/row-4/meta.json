@@ -1,0 +1,19 @@
+{
+  "id": "stats.row-4",
+  "sectionType": "stats",
+  "layout": "row-4",
+  "style": ["modern-minimal", "corporate", "dark-tech", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "StatsRow4.tsx",
+  "requires": ["framer-motion"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "stats": { "type": "array" }
+  },
+  "previewDescription": "Row of 4 large numeric stats with labels, counts up into view."
+}

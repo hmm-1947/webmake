@@ -1,0 +1,26 @@
+{
+  "id": "hero.split-image",
+  "sectionType": "hero",
+  "layout": "split",
+  "style": ["modern-minimal", "corporate", "dark-tech", "gradient-vibrant"],
+  "industry": ["saas-landing", "startup", "app-landing", "agency"],
+  "tone": ["professional", "bold", "technical"],
+  "entry": "HeroSplitImage.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "primaryCtaLabel": { "type": "string" },
+    "primaryCtaHref": { "type": "string" },
+    "secondaryCtaLabel": { "type": "string" },
+    "secondaryCtaHref": { "type": "string" },
+    "imageUrl": { "type": "string" },
+    "imageAlt": { "type": "string" }
+  },
+  "previewDescription": "Split hero: headline/CTA text left, image/visual right. Scroll-in fade animation."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "footer.simple-centered",
+  "sectionType": "footer",
+  "layout": "simple-centered",
+  "style": ["modern-minimal", "playful-rounded", "editorial-serif"],
+  "industry": ["*"],
+  "tone": ["friendly", "professional"],
+  "entry": "FooterSimpleCentered.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "animationLevel": ["none", "subtle"],
+  "props": {
+    "logoText": { "type": "string" },
+    "tagline": { "type": "string" },
+    "links": { "type": "array" }
+  },
+  "previewDescription": "Minimal centered footer with logo, tagline, and inline links, no columns."
+}

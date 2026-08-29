@@ -1,0 +1,21 @@
+{
+  "id": "navbar.top-simple",
+  "sectionType": "navbar",
+  "layout": "top-simple",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "Navbar.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "logoText": { "type": "string" },
+    "links": { "type": "array" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  },
+  "previewDescription": "Simple top navbar: logo left, links center, single CTA button right, mobile hamburger menu."
+}

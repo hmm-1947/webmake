@@ -1,0 +1,18 @@
+{
+  "id": "ui.button",
+  "sectionType": "atom",
+  "layout": "default",
+  "style": [],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "Button.tsx",
+  "requires": ["class-variance-authority", "clsx", "tailwind-merge"],
+  "dependsOnComponents": [],
+  "complexity": "atom",
+  "supportsAnimation": false,
+  "props": {
+    "variant": { "type": "string", "enum": ["default", "outline", "ghost", "link"] },
+    "size": { "type": "string", "enum": ["sm", "md", "lg"] }
+  },
+  "previewDescription": "Shared button atom with variant/size support, used by many sections."
+}

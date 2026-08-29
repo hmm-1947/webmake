@@ -1,0 +1,20 @@
+{
+  "id": "features.grid-3",
+  "sectionType": "features",
+  "layout": "grid-3",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "dark-tech"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "FeaturesGrid3.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "3-column feature grid with icon, title, description per item. Each item fades in on scroll."
+}

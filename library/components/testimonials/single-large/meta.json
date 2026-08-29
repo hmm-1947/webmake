@@ -1,0 +1,20 @@
+{
+  "id": "testimonials.single-large",
+  "sectionType": "testimonials",
+  "layout": "single-large",
+  "style": ["modern-minimal", "editorial-serif", "corporate"],
+  "industry": ["*"],
+  "tone": ["professional", "friendly"],
+  "entry": "TestimonialsSingleLarge.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Single large rotating quote with prev/next controls and dot indicators."
+}

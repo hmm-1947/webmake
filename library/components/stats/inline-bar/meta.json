@@ -1,0 +1,19 @@
+{
+  "id": "stats.inline-bar",
+  "sectionType": "stats",
+  "layout": "inline-bar",
+  "style": ["modern-minimal", "corporate", "monochrome", "editorial-serif"],
+  "industry": ["*"],
+  "tone": ["professional"],
+  "entry": "StatsInlineBar.tsx",
+  "requires": ["framer-motion"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "stats": { "type": "array" }
+  },
+  "previewDescription": "Compact inline stat bar with vertical dividers, no card backgrounds."
+}

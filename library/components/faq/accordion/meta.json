@@ -1,0 +1,19 @@
+{
+  "id": "faq.accordion",
+  "sectionType": "faq",
+  "layout": "accordion",
+  "style": ["modern-minimal", "corporate", "monochrome", "editorial-serif"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "FaqAccordion.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Accessible accordion FAQ list, one item expanded at a time."
+}

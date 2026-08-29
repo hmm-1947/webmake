@@ -1,0 +1,21 @@
+{
+  "id": "navbar.centered-logo",
+  "sectionType": "navbar",
+  "layout": "centered-logo",
+  "style": ["modern-minimal", "editorial-serif", "corporate"],
+  "industry": ["*"],
+  "tone": ["professional", "friendly"],
+  "entry": "NavbarCenteredLogo.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "animationLevel": ["none", "subtle"],
+  "props": {
+    "logoText": { "type": "string" },
+    "links": { "type": "array" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  },
+  "previewDescription": "Nav links split left/right around a centered logo, CTA on the right."
+}

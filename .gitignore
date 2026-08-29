@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+output/*
+!output/.gitkeep
+node_modules/
+.next/
+*.egg-info/
+.DS_Store

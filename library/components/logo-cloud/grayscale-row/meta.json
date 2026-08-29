@@ -1,0 +1,18 @@
+{
+  "id": "logo-cloud.grayscale-row",
+  "sectionType": "logo-cloud",
+  "layout": "row",
+  "style": ["modern-minimal", "corporate", "monochrome"],
+  "industry": ["saas-landing", "startup", "agency"],
+  "tone": [],
+  "entry": "LogoCloudRow.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "props": {
+    "heading": { "type": "string" },
+    "logos": { "type": "array" }
+  },
+  "previewDescription": "Row of grayscale-on-hover-color partner/customer logos below a small heading."
+}

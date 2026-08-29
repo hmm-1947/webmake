@@ -1,0 +1,20 @@
+{
+  "id": "features.bento-grid",
+  "sectionType": "features",
+  "layout": "bento-grid",
+  "style": ["dark-tech", "gradient-vibrant", "neo-brutalist"],
+  "industry": ["saas-landing", "startup", "app-landing"],
+  "tone": ["bold", "technical"],
+  "entry": "FeaturesBentoGrid.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Asymmetric bento-box feature grid; first item spans two columns. Bold, tech-forward feel."
+}

@@ -1,0 +1,20 @@
+{
+  "id": "footer.multi-column",
+  "sectionType": "footer",
+  "layout": "multi-column",
+  "style": ["modern-minimal", "corporate", "dark-tech", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "FooterMultiColumn.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "props": {
+    "logoText": { "type": "string" },
+    "tagline": { "type": "string" },
+    "columns": { "type": "array" },
+    "socialLinks": { "type": "array" }
+  },
+  "previewDescription": "Multi-column footer with link groups, brand block, and social icons row."
+}

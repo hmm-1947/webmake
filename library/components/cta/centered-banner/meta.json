@@ -1,0 +1,21 @@
+{
+  "id": "cta.centered-banner",
+  "sectionType": "cta",
+  "layout": "centered-banner",
+  "style": ["modern-minimal", "corporate", "dark-tech", "gradient-vibrant", "playful-rounded"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "CtaCenteredBanner.tsx",
+  "requires": [],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  },
+  "previewDescription": "Full-width colored banner CTA with heading and single button, placed near the end of a page."
+}

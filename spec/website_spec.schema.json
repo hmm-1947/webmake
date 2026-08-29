@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://webforge.dev/schemas/website_spec.schema.json",
+  "title": "WebForge Website Specification",
+  "description": "Structured specification produced by the AI layer and consumed by the Python generation engine.",
+  "type": "object",
+  "required": ["meta", "siteType", "pages", "designSystem"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "industry": { "type": "string" },
+        "targetAudience": { "type": "string" },
+        "tone": {
+          "type": "string",
+          "enum": ["professional", "playful", "luxury", "minimal", "bold", "friendly", "technical", "editorial"]
+        }
+      }
+    },
+    "siteType": {
+      "type": "string",
+      "enum": [
+        "saas-landing", "marketing", "portfolio", "blog", "ecommerce",
+        "agency", "startup", "docs", "personal", "restaurant",
+        "real-estate", "nonprofit", "event", "dashboard-marketing", "app-landing"
+      ]
+    },
+    "designSystem": {
+      "type": "object",
+      "required": ["style", "colors", "typography"],
+      "properties": {
+        "style": {
+          "type": "string",
+          "enum": [
+            "modern-minimal", "glassmorphism", "neo-brutalist", "corporate",
+            "playful-rounded", "dark-tech", "editorial-serif", "gradient-vibrant",
+            "monochrome", "retro-futurism"
+          ]
+        },
+        "colors": {
+          "type": "object",
+          "required": ["mode", "primary"],
+          "properties": {
+            "mode": { "type": "string", "enum": ["light", "dark", "system"] },
+            "primary": { "type": "string" },
+            "secondary": { "type": "string" },
+            "accent": { "type": "string" },
+            "neutral": { "type": "string" },
+            "background": { "type": "string" },
+            "surface": { "type": "string" }
+          }
+        },
+        "typography": {
+          "type": "object",
+          "required": ["headingFont", "bodyFont"],
+          "properties": {
+            "headingFont": { "type": "string" },
+            "bodyFont": { "type": "string" },
+            "monoFont": { "type": "string" },
+            "scale": { "type": "string", "enum": ["compact", "comfortable", "spacious"] }
+          }
+        },
+        "radius": { "type": "string", "enum": ["none", "sm", "md", "lg", "xl", "full"] },
+        "density": { "type": "string", "enum": ["compact", "regular", "relaxed"] },
+        "shadowIntensity": { "type": "string", "enum": ["none", "subtle", "medium", "strong"] }
+      }
+    },
+    "animations": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "string", "enum": ["none", "subtle", "moderate", "expressive"] },
+        "scrollReveal": { "type": "boolean" },
+        "pageTransitions": { "type": "boolean" },
+        "hoverEffects": { "type": "boolean" },
+        "library": { "type": "string", "enum": ["framer-motion", "css-only", "gsap"] }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "auth", "newsletter-signup", "contact-form", "search", "dark-mode-toggle",
+          "cms-blog", "cart", "checkout", "multi-language", "testimonials-carousel",
+          "pricing-toggle-monthly-yearly", "live-chat-widget", "analytics",
+          "seo-meta", "sitemap", "booking-calendar", "map-embed"
+        ]
+      }
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "name", "sections"],
+        "properties": {
+          "path": { "type": "string" },
+          "name": { "type": "string" },
+          "isHome": { "type": "boolean" },
+          "sections": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["type", "layout"],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "navbar", "hero", "features", "feature-grid", "bento-grid",
+                    "logo-cloud", "stats", "testimonials", "pricing", "faq",
+                    "cta", "footer", "team", "gallery", "blog-list", "blog-post",
+                    "contact", "about", "timeline", "comparison-table",
+                    "newsletter", "content-split", "video-showcase", "steps-process"
+                  ]
+                },
+                "layout": { "type": "string" },
+                "variant": { "type": "string" },
+                "content": {
+                  "type": "object",
+                  "description": "Freeform content payload matched against component contentSchema at generation time."
+                },
+                "componentHint": {
+                  "type": "string",
+                  "description": "Optional explicit component id to force-select, bypassing matching heuristics."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "properties": {
+        "maxWidth": { "type": "string", "enum": ["standard", "wide", "full"] },
+        "navStyle": { "type": "string", "enum": ["top-simple", "top-mega", "sidebar", "top-centered-logo"] },
+        "footerStyle": { "type": "string", "enum": ["simple", "multi-column", "minimal-centered"] }
+      }
+    },
+    "techRequirements": {
+      "type": "object",
+      "properties": {
+        "framework": { "type": "string", "enum": ["nextjs-app-router"], "default": "nextjs-app-router" },
+        "styling": { "type": "string", "enum": ["tailwind"], "default": "tailwind" },
+        "language": { "type": "string", "enum": ["typescript"], "default": "typescript" },
+        "cssVariablesTheme": { "type": "boolean", "default": true }
+      }
+    }
+  }
+}

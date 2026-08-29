@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "name": "Flowbase",
+    "description": "The all-in-one workspace for fast-moving product teams.",
+    "industry": "saas-landing",
+    "targetAudience": "Product managers and engineering leads at startups",
+    "tone": "professional"
+  },
+  "siteType": "saas-landing",
+  "designSystem": {
+    "style": "modern-minimal",
+    "colors": {
+      "mode": "light",
+      "primary": "#111827",
+      "secondary": "#6b7280",
+      "accent": "#4f46e5",
+      "neutral": "#f3f4f6",
+      "background": "#ffffff",
+      "surface": "#f9fafb"
+    },
+    "typography": {
+      "headingFont": "Space Grotesk",
+      "bodyFont": "Inter",
+      "monoFont": "JetBrains Mono",
+      "scale": "comfortable"
+    },
+    "radius": "lg",
+    "density": "regular",
+    "shadowIntensity": "subtle"
+  },
+  "animations": {
+    "level": "moderate",
+    "scrollReveal": true,
+    "pageTransitions": false,
+    "hoverEffects": true,
+    "library": "framer-motion"
+  },
+  "features": ["newsletter-signup", "pricing-toggle-monthly-yearly", "seo-meta"],
+  "layout": {
+    "maxWidth": "standard",
+    "navStyle": "top-simple",
+    "footerStyle": "multi-column"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Home",
+      "isHome": true,
+      "sections": [
+        {
+          "type": "navbar",
+          "layout": "top-simple",
+          "content": {
+            "logoText": "Flowbase",
+            "links": [
+              { "label": "Features", "href": "#features" },
+              { "label": "Pricing", "href": "#pricing" },
+              { "label": "FAQ", "href": "#faq" }
+            ],
+            "ctaLabel": "Start free trial",
+            "ctaHref": "#pricing"
+          }
+        },
+        {
+          "type": "hero",
+          "layout": "split",
+          "content": {
+            "eyebrow": "Now with AI workflows",
+            "heading": "Ship product decisions in hours, not weeks",
+            "subheading": "Flowbase brings your roadmap, specs, and team into one fast, focused workspace.",
+            "primaryCtaLabel": "Start free trial",
+            "primaryCtaHref": "#pricing",
+            "secondaryCtaLabel": "Watch demo",
+            "secondaryCtaHref": "#",
+            "imageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80",
+            "imageAlt": "Flowbase product dashboard"
+          }
+        },
+        {
+          "type": "logo-cloud",
+          "layout": "row",
+          "content": {
+            "heading": "Trusted by teams at"
+          }
+        },
+        {
+          "type": "features",
+          "layout": "grid-3",
+          "content": {
+            "heading": "Everything your team needs",
+            "subheading": "One workspace instead of five disconnected tools.",
+            "items": [
+              { "icon": "Zap", "title": "Instant sync", "description": "Every change propagates to your team in real time." },
+              { "icon": "ShieldCheck", "title": "Enterprise-grade security", "description": "SOC 2 Type II certified with SSO and audit logs." },
+              { "icon": "Layers", "title": "Composable workflows", "description": "Build the exact process your team needs, no more, no less." }
+            ]
+          }
+        },
+        {
+          "type": "stats",
+          "layout": "row-4",
+          "content": {
+            "heading": "Flowbase by the numbers"
+          }
+        },
+        {
+          "type": "pricing",
+          "layout": "tiers-3",
+          "content": {
+            "heading": "Simple, transparent pricing",
+            "subheading": "Start free. Upgrade when you're ready.",
+            "tiers": [
+              { "name": "Starter", "price": "$0", "period": "/mo", "features": ["1 project", "Up to 3 members", "Community support"], "ctaLabel": "Start free", "ctaHref": "#" },
+              { "name": "Pro", "price": "$29", "period": "/mo", "description": "For growing teams", "features": ["Unlimited projects", "Unlimited members", "Priority support", "Advanced analytics"], "ctaLabel": "Start trial", "ctaHref": "#", "highlighted": true },
+              { "name": "Enterprise", "price": "Custom", "features": ["SSO & SCIM", "Dedicated support", "Custom SLAs", "Audit logs"], "ctaLabel": "Contact sales", "ctaHref": "#" }
+            ]
+          }
+        },
+        {
+          "type": "testimonials",
+          "layout": "grid-3",
+          "content": {
+            "heading": "Loved by product teams",
+            "items": [
+              { "quote": "Flowbase cut our planning cycle in half.", "authorName": "Dana Kim", "authorRole": "VP Product, Orbital" },
+              { "quote": "Finally, a tool that doesn't get in the way.", "authorName": "Marcus Webb", "authorRole": "Founder, Lattice" },
+              { "quote": "Our whole roadmap lives here now.", "authorName": "Elena Fischer", "authorRole": "Head of Eng, Vantage" }
+            ]
+          }
+        },
+        {
+          "type": "faq",
+          "layout": "accordion",
+          "content": {
+            "heading": "Frequently asked questions",
+            "items": [
+              { "question": "Can I cancel anytime?", "answer": "Yes, cancel anytime from your billing settings with no penalty." },
+              { "question": "Is there a free trial?", "answer": "Every Pro plan includes a 14-day free trial, no card required." },
+              { "question": "Do you offer discounts for startups?", "answer": "Yes, reach out to our sales team for startup pricing." }
+            ]
+          }
+        },
+        {
+          "type": "cta",
+          "layout": "centered-banner",
+          "content": {
+            "heading": "Ready to move faster?",
+            "subheading": "Join thousands of product teams already using Flowbase.",
+            "ctaLabel": "Start your free trial",
+            "ctaHref": "#pricing"
+          }
+        },
+        {
+          "type": "footer",
+          "layout": "multi-column",
+          "content": {
+            "logoText": "Flowbase",
+            "tagline": "The workspace for fast-moving product teams.",
+            "columns": [
+              { "title": "Product", "links": [{ "label": "Features", "href": "#features" }, { "label": "Pricing", "href": "#pricing" }] },
+              { "title": "Company", "links": [{ "label": "About", "href": "#" }, { "label": "Careers", "href": "#" }] },
+              { "title": "Resources", "links": [{ "label": "Docs", "href": "#" }, { "label": "Blog", "href": "#" }] }
+            ],
+            "socialLinks": [
+              { "platform": "twitter", "href": "https://twitter.com" },
+              { "platform": "github", "href": "https://github.com" },
+              { "platform": "linkedin", "href": "https://linkedin.com" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

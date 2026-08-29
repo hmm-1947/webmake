@@ -1,0 +1,19 @@
+{
+  "id": "logo-cloud.marquee",
+  "sectionType": "logo-cloud",
+  "layout": "marquee",
+  "style": ["modern-minimal", "dark-tech", "gradient-vibrant"],
+  "industry": ["saas-landing", "startup", "app-landing"],
+  "tone": ["bold", "technical"],
+  "entry": "LogoCloudMarquee.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "logos": { "type": "array" }
+  },
+  "previewDescription": "Continuously scrolling horizontal marquee of partner/customer logos."
+}

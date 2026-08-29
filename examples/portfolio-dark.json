@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "name": "Nocturne",
+    "description": "A dark, minimal portfolio for an independent product designer.",
+    "industry": "portfolio",
+    "tone": "minimal"
+  },
+  "siteType": "portfolio",
+  "designSystem": {
+    "style": "monochrome",
+    "colors": {
+      "mode": "dark",
+      "primary": "#fafafa",
+      "secondary": "#a1a1aa",
+      "accent": "#22d3ee",
+      "neutral": "#27272a",
+      "background": "#09090b",
+      "surface": "#18181b"
+    },
+    "typography": {
+      "headingFont": "Manrope",
+      "bodyFont": "Inter",
+      "monoFont": "JetBrains Mono",
+      "scale": "spacious"
+    },
+    "radius": "sm",
+    "density": "relaxed",
+    "shadowIntensity": "none"
+  },
+  "animations": {
+    "level": "subtle",
+    "scrollReveal": true,
+    "pageTransitions": false,
+    "hoverEffects": true,
+    "library": "framer-motion"
+  },
+  "features": ["contact-form", "seo-meta"],
+  "layout": {
+    "maxWidth": "standard",
+    "navStyle": "top-simple",
+    "footerStyle": "minimal-centered"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Home",
+      "isHome": true,
+      "sections": [
+        {
+          "type": "navbar",
+          "layout": "top-simple",
+          "content": {
+            "logoText": "Nocturne",
+            "links": [
+              { "label": "Work", "href": "#" },
+              { "label": "About", "href": "#" }
+            ],
+            "ctaLabel": "Contact",
+            "ctaHref": "#"
+          }
+        },
+        {
+          "type": "hero",
+          "layout": "centered",
+          "content": {
+            "eyebrow": "Independent designer",
+            "heading": "Quiet, considered product design",
+            "subheading": "I help small teams design software that feels inevitable.",
+            "primaryCtaLabel": "See selected work",
+            "primaryCtaHref": "#"
+          }
+        },
+        {
+          "type": "testimonials",
+          "layout": "grid-3",
+          "content": {
+            "heading": "What clients say",
+            "items": [
+              { "quote": "The clearest design thinking I've worked with.", "authorName": "Ravi Desai", "authorRole": "Founder, Arclight" },
+              { "quote": "Every screen felt considered, not decorated.", "authorName": "Nina Volkov", "authorRole": "CEO, Fernwood" }
+            ]
+          }
+        },
+        {
+          "type": "faq",
+          "layout": "accordion",
+          "content": {
+            "heading": "Common questions",
+            "items": [
+              { "question": "What's your typical timeline?", "answer": "Most engagements run 4-8 weeks depending on scope." },
+              { "question": "Do you work with early-stage startups?", "answer": "Yes, that's most of my practice." }
+            ]
+          }
+        },
+        {
+          "type": "cta",
+          "layout": "centered-banner",
+          "content": {
+            "heading": "Have a project in mind?",
+            "subheading": "I'm currently booking for Q1.",
+            "ctaLabel": "Get in touch",
+            "ctaHref": "#"
+          }
+        },
+        {
+          "type": "footer",
+          "layout": "multi-column",
+          "content": {
+            "logoText": "Nocturne",
+            "tagline": "Independent product design studio.",
+            "columns": [
+              { "title": "Studio", "links": [{ "label": "Work", "href": "#" }, { "label": "About", "href": "#" }] }
+            ],
+            "socialLinks": [
+              { "platform": "twitter", "href": "https://twitter.com" }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "hero.centered",
+  "sectionType": "hero",
+  "layout": "centered",
+  "style": ["modern-minimal", "corporate", "dark-tech", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": ["professional", "bold", "friendly", "technical"],
+  "entry": "HeroCentered.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "primaryCtaLabel": { "type": "string" },
+    "primaryCtaHref": { "type": "string" },
+    "secondaryCtaLabel": { "type": "string" },
+    "secondaryCtaHref": { "type": "string" },
+    "imageUrl": { "type": "string" },
+    "imageAlt": { "type": "string" }
+  },
+  "previewDescription": "Centered hero with headline, CTAs, and an optional wide preview image below."
+}

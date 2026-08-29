@@ -1,0 +1,20 @@
+{
+  "id": "testimonials.grid-3",
+  "sectionType": "testimonials",
+  "layout": "grid-3",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "editorial-serif"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "TestimonialsGrid3.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "3-column testimonial cards with quote, author name, role, and avatar."
+}

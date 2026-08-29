@@ -1,0 +1,19 @@
+{
+  "id": "faq.two-column",
+  "sectionType": "faq",
+  "layout": "two-column",
+  "style": ["modern-minimal", "editorial-serif", "playful-rounded"],
+  "industry": ["*"],
+  "tone": ["friendly", "professional"],
+  "entry": "FaqTwoColumn.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "animationLevel": ["none", "subtle"],
+  "props": {
+    "heading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "All Q&A pairs shown at once in a two-column grid, no accordion interaction."
+}

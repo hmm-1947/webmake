@@ -1,0 +1,20 @@
+{
+  "id": "features.alternating-rows",
+  "sectionType": "features",
+  "layout": "alternating-rows",
+  "style": ["modern-minimal", "corporate", "playful-rounded"],
+  "industry": ["*"],
+  "tone": ["professional", "friendly"],
+  "entry": "FeaturesAlternatingRows.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Large icon and text alternating left/right per row, editorial feel."
+}

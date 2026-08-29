@@ -1,0 +1,23 @@
+{
+  "id": "cta.split-image",
+  "sectionType": "cta",
+  "layout": "split-image",
+  "style": ["modern-minimal", "corporate", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": ["professional", "friendly", "bold"],
+  "entry": "CtaSplitImage.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" },
+    "imageUrl": { "type": "string" },
+    "imageAlt": { "type": "string" }
+  },
+  "previewDescription": "Two-column CTA card with text and button left, image right."
+}

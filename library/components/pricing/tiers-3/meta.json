@@ -1,0 +1,20 @@
+{
+  "id": "pricing.tiers-3",
+  "sectionType": "pricing",
+  "layout": "tiers-3",
+  "style": ["modern-minimal", "corporate", "dark-tech", "playful-rounded"],
+  "industry": ["saas-landing", "startup", "app-landing"],
+  "tone": [],
+  "entry": "PricingTiers3.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "tiers": { "type": "array" }
+  },
+  "previewDescription": "3-tier pricing cards with feature checklist and a highlighted 'popular' tier."
+}

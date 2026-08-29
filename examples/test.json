@@ -1,0 +1,337 @@
+{
+    "meta": {
+        "name": "Ember & Thyme",
+        "description": "A warm, contemporary restaurant website showcasing seasonal cuisine, an inviting dining experience, and easy table reservations.",
+        "industry": "Restaurant",
+        "targetAudience": "Food lovers, couples, families, and guests looking for a refined but welcoming dining experience",
+        "tone": "friendly"
+    },
+    "siteType": "restaurant",
+    "designSystem": {
+        "style": "modern-minimal",
+        "colors": {
+            "mode": "light",
+            "primary": "#8B4513",
+            "secondary": "#D97706",
+            "accent": "#B45309",
+            "neutral": "#57534E",
+            "background": "#FAF7F2",
+            "surface": "#FFFFFF"
+        },
+        "typography": {
+            "headingFont": "Playfair Display",
+            "bodyFont": "DM Sans",
+            "monoFont": "JetBrains Mono",
+            "scale": "comfortable"
+        },
+        "radius": "md",
+        "density": "relaxed",
+        "shadowIntensity": "subtle"
+    },
+    "animations": {
+        "level": "subtle",
+        "scrollReveal": true,
+        "pageTransitions": true,
+        "hoverEffects": true,
+        "library": "framer-motion"
+    },
+    "features": [
+        "booking-calendar",
+        "contact-form",
+        "map-embed",
+        "newsletter-signup",
+        "seo-meta"
+    ],
+    "layout": {
+        "maxWidth": "wide",
+        "navStyle": "top-simple",
+        "footerStyle": "multi-column"
+    },
+    "pages": [
+        {
+            "path": "/",
+            "name": "Home",
+            "isHome": true,
+            "sections": [
+                {
+                    "type": "navbar",
+                    "layout": "top-simple",
+                    "content": {
+                        "logoText": "Ember & Thyme",
+                        "links": [
+                            {
+                                "label": "Menu",
+                                "href": "#menu"
+                            },
+                            {
+                                "label": "Our Story",
+                                "href": "#story"
+                            },
+                            {
+                                "label": "Gallery",
+                                "href": "#gallery"
+                            },
+                            {
+                                "label": "Contact",
+                                "href": "#contact"
+                            }
+                        ],
+                        "ctaLabel": "Reserve a Table",
+                        "ctaHref": "#reservation"
+                    }
+                },
+                {
+                    "type": "hero",
+                    "layout": "split",
+                    "content": {
+                        "eyebrow": "Seasonal dining, thoughtfully made",
+                        "heading": "Good food. Warm company. Memorable evenings.",
+                        "subheading": "Ember & Thyme brings locally inspired ingredients, open-fire cooking, and heartfelt hospitality together in a relaxed neighborhood dining room.",
+                        "primaryCtaLabel": "Reserve a Table",
+                        "primaryCtaHref": "#reservation",
+                        "secondaryCtaLabel": "View Our Menu",
+                        "secondaryCtaHref": "#menu",
+                        "imageUrl": "[https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85](https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85)",
+                        "imageAlt": "Beautifully plated seasonal dish served at Ember & Thyme"
+                    }
+                },
+                {
+                    "type": "features",
+                    "layout": "grid-3",
+                    "content": {
+                        "heading": "Made with intention",
+                        "subheading": "From the ingredients we choose to the way every plate reaches your table, we believe the details make the meal.",
+                        "items": [
+                            {
+                                "icon": "Leaf",
+                                "title": "Seasonal Ingredients",
+                                "description": "We build our menu around fresh produce, responsibly sourced meats, and ingredients at their peak."
+                            },
+                            {
+                                "icon": "Flame",
+                                "title": "Open-Fire Cooking",
+                                "description": "Wood fire adds depth, character, and a little magic to our vegetables, seafood, and signature dishes."
+                            },
+                            {
+                                "icon": "Heart",
+                                "title": "Genuine Hospitality",
+                                "description": "Come as you are. Our team is here to make every visit comfortable, generous, and worth remembering."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "stats",
+                    "layout": "row-4",
+                    "content": {
+                        "heading": "A table worth gathering around",
+                        "stats": [
+                            {
+                                "value": "12+",
+                                "label": "Years serving our community"
+                            },
+                            {
+                                "value": "40+",
+                                "label": "Seasonal dishes each year"
+                            },
+                            {
+                                "value": "4.9/5",
+                                "label": "Guest satisfaction rating"
+                            },
+                            {
+                                "value": "7 days",
+                                "label": "Open every week"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "pricing",
+                    "layout": "tiers-3",
+                    "content": {
+                        "heading": "Choose your dining experience",
+                        "subheading": "Whether you're joining us for a quick bite or settling in for the evening, there's a table waiting for you.",
+                        "tiers": [
+                            {
+                                "name": "Lunch",
+                                "price": "$28",
+                                "period": "per guest",
+                                "description": "A relaxed seasonal lunch featuring our chef's daily favorites.",
+                                "features": [
+                                    "Two-course seasonal menu",
+                                    "Freshly baked bread",
+                                    "Vegetarian options available"
+                                ],
+                                "ctaLabel": "Book Lunch",
+                                "ctaHref": "#reservation",
+                                "highlighted": false
+                            },
+                            {
+                                "name": "Dinner",
+                                "price": "$58",
+                                "period": "per guest",
+                                "description": "Our signature evening experience with generous plates and seasonal flavors.",
+                                "features": [
+                                    "Three-course seasonal menu",
+                                    "Choice of main course",
+                                    "Vegetarian and dietary-friendly options"
+                                ],
+                                "ctaLabel": "Book Dinner",
+                                "ctaHref": "#reservation",
+                                "highlighted": true
+                            },
+                            {
+                                "name": "Chef's Table",
+                                "price": "$110",
+                                "period": "per guest",
+                                "description": "An intimate tasting experience created around the best ingredients of the day.",
+                                "features": [
+                                    "Five-course chef's tasting menu",
+                                    "Chef-selected seasonal dishes",
+                                    "Optional wine pairing"
+                                ],
+                                "ctaLabel": "Enquire Now",
+                                "ctaHref": "#contact",
+                                "highlighted": false
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "testimonials",
+                    "layout": "grid-3",
+                    "content": {
+                        "heading": "Loved by our guests",
+                        "subheading": "The best part of what we do is hearing that our table became part of someone's story.",
+                        "items": [
+                            {
+                                "quote": "Every dish felt thoughtful without being fussy. The atmosphere was warm, the service was wonderful, and we are already planning our next visit.",
+                                "authorName": "Maya Thompson",
+                                "authorRole": "Local guest",
+                                "avatarUrl": "[https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80](https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80)"
+                            },
+                            {
+                                "quote": "The open-fire vegetables were exceptional, and the seasonal menu gave us something new to discover. One of the best dinners we've had in months.",
+                                "authorName": "Daniel Brooks",
+                                "authorRole": "Dinner guest",
+                                "avatarUrl": "[https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80](https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80)"
+                            },
+                            {
+                                "quote": "It feels like the kind of restaurant you want to keep to yourself, but the food is too good not to recommend. Absolutely worth the reservation.",
+                                "authorName": "Sofia Martinez",
+                                "authorRole": "Weekend guest",
+                                "avatarUrl": "[https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80](https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "faq",
+                    "layout": "accordion",
+                    "content": {
+                        "heading": "Before you visit",
+                        "items": [
+                            {
+                                "question": "Do I need a reservation?",
+                                "answer": "Reservations are recommended, especially for Friday and Saturday evenings. We also welcome walk-ins whenever tables are available."
+                            },
+                            {
+                                "question": "Do you accommodate dietary requirements?",
+                                "answer": "Yes. Our kitchen can accommodate many vegetarian, vegan, gluten-free, and allergy-related requests. Please let us know when making your reservation so our team can prepare accordingly."
+                            },
+                            {
+                                "question": "Can I book the restaurant for a private event?",
+                                "answer": "Absolutely. We offer private dining options for birthdays, celebrations, corporate dinners, and other special occasions. Contact our team to discuss your group size and requirements."
+                            },
+                            {
+                                "question": "What are your opening hours?",
+                                "answer": "We are open Monday through Thursday from 12:00 PM to 10:00 PM, Friday and Saturday from 12:00 PM to 11:00 PM, and Sunday from 12:00 PM to 9:00 PM."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "cta",
+                    "layout": "centered-banner",
+                    "content": {
+                        "heading": "Your table is waiting",
+                        "subheading": "Bring someone you love, come hungry, and let us take care of the rest.",
+                        "ctaLabel": "Reserve Your Table",
+                        "ctaHref": "#reservation"
+                    }
+                },
+                {
+                    "type": "footer",
+                    "layout": "multi-column",
+                    "content": {
+                        "logoText": "Ember & Thyme",
+                        "tagline": "Seasonal food, open-fire cooking, and warm hospitality.",
+                        "columns": [
+                            {
+                                "title": "Explore",
+                                "links": [
+                                    {
+                                        "label": "Menu",
+                                        "href": "#menu"
+                                    },
+                                    {
+                                        "label": "Our Story",
+                                        "href": "#story"
+                                    },
+                                    {
+                                        "label": "Gallery",
+                                        "href": "#gallery"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Visit",
+                                "links": [
+                                    {
+                                        "label": "Reservations",
+                                        "href": "#reservation"
+                                    },
+                                    {
+                                        "label": "Private Dining",
+                                        "href": "#contact"
+                                    },
+                                    {
+                                        "label": "Contact",
+                                        "href": "#contact"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Hours",
+                                "links": [
+                                    {
+                                        "label": "Mon–Thu: 12 PM–10 PM",
+                                        "href": "#contact"
+                                    },
+                                    {
+                                        "label": "Fri–Sat: 12 PM–11 PM",
+                                        "href": "#contact"
+                                    },
+                                    {
+                                        "label": "Sun: 12 PM–9 PM",
+                                        "href": "#contact"
+                                    }
+                                ]
+                            }
+                        ],
+                        "socialLinks": [
+                            {
+                                "platform": "instagram",
+                                "href": "#"
+                            },
+                            {
+                                "platform": "facebook",
+                                "href": "#"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

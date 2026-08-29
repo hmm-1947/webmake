@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://webforge.dev/schemas/component_metadata.schema.json",
+  "title": "WebForge Component Metadata",
+  "description": "Sidecar metadata (meta.json) describing a single component in the library. Lives next to the component's .tsx implementation.",
+  "type": "object",
+  "required": ["id", "sectionType", "layout", "style", "entry", "props"],
+  "properties": {
+    "id": { "type": "string", "description": "Globally unique id, e.g. 'hero.split-image-01'" },
+    "sectionType": {
+      "type": "string",
+      "description": "Matches a spec section 'type'"
+    },
+    "layout": { "type": "string", "description": "e.g. 'split', 'centered', 'grid-3', 'carousel'" },
+    "style": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Design styles this component fits, matches designSystem.style values, can support multiple"
+    },
+    "industry": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Industries/site types this suits best, empty/['*'] = universal"
+    },
+    "tone": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "entry": { "type": "string", "description": "Relative path to the .tsx file from the component's own folder" },
+    "requires": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "npm package names this component needs beyond the base stack"
+    },
+    "dependsOnComponents": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Other component ids this one imports/composes (e.g. a pricing table using a Badge atom)"
+    },
+    "props": {
+      "type": "object",
+      "description": "JSON-schema-like description of the props/content this component accepts, used to map spec 'content' onto real props"
+    },
+    "supportsAnimation": { "type": "boolean" },
+    "animationLevel": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["none", "subtle", "moderate", "expressive"] }
+    },
+    "darkModeAware": { "type": "boolean", "default": true },
+    "responsiveness": { "type": "string", "enum": ["mobile-first", "desktop-only"], "default": "mobile-first" },
+    "complexity": { "type": "string", "enum": ["atom", "section", "composite"] },
+    "weight": {
+      "type": "number",
+      "default": 1.0,
+      "description": "Base score multiplier used as a tie-breaker in matching (higher = preferred when scores are otherwise equal)"
+    },
+    "previewDescription": { "type": "string" }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "pricing.comparison-table",
+  "sectionType": "pricing",
+  "layout": "comparison-table",
+  "style": ["modern-minimal", "corporate", "dark-tech"],
+  "industry": ["saas-landing", "startup", "app-landing"],
+  "tone": ["professional", "technical"],
+  "entry": "PricingComparisonTable.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "animationLevel": ["none", "subtle"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "tiers": { "type": "array" }
+  },
+  "previewDescription": "Side-by-side feature comparison table across pricing tiers with checkmarks."
+}
