@@ -1,0 +1,2 @@
+export interface MarqueeEditorialProps { items?:string[]; }
+export default function MarqueeEditorial({items=['DISCOVER','WANDER','EXPLORE','ESCAPE','RETURN']}:MarqueeEditorialProps){return <section className="overflow-hidden border-y border-border py-6"><div className="flex min-w-max animate-[marquee_24s_linear_infinite] gap-10 whitespace-nowrap">{[...items,...items].map((item,i)=><span key={i} className="font-heading text-3xl font-semibold tracking-tight md:text-5xl">{item}<span className="ml-10 text-accent">✦</span></span>)}</div></section>}

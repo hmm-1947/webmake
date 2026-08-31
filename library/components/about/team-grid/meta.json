@@ -1,0 +1,12 @@
+{
+  "id": "about.team-grid",
+  "sectionType": "about",
+  "layout": "team-grid",
+  "style": ["modern-minimal", "corporate", "playful-rounded"],
+  "industry": ["*"],
+  "tone": ["friendly", "professional", "bold"],
+  "entry": "AboutTeamGrid.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "body": { "type": "string" }, "members": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "People-first about section: intro copy centered above a responsive team photo grid — a distinct alternative to the story-split layout."
+}

@@ -1,0 +1,12 @@
+{
+  "id": "timeline.roadmap",
+  "sectionType": "timeline",
+  "layout": "roadmap",
+  "style": ["modern-minimal", "corporate", "dark-tech", "editorial-serif"],
+  "industry": ["startup", "saas-landing", "agency", "event", "nonprofit"],
+  "tone": ["professional", "technical", "editorial"],
+  "entry": "TimelineRoadmap.tsx",
+  "props": { "heading": { "type": "string" }, "subheading": { "type": "string" }, "items": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Vertical roadmap with numbered milestones, connecting line, and compact editorial hierarchy."
+}

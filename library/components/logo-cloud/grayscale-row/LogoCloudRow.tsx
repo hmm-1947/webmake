@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export interface LogoItem {
   name: string;
   imageUrl: string;
@@ -29,11 +31,12 @@ export default function LogoCloudRow({
         )}
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
           {logos.map((logo) => (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
+            <Image
               key={logo.name}
               src={logo.imageUrl}
-              alt={logo.name}
+              alt={`${logo.name} logo`}
+              width={120}
+              height={40}
               className="h-8 w-auto opacity-50 grayscale transition hover:opacity-100 hover:grayscale-0"
             />
           ))}
@@ -42,3 +45,4 @@ export default function LogoCloudRow({
     </section>
   );
 }
+

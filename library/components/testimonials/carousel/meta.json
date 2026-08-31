@@ -1,0 +1,20 @@
+{
+  "id": "testimonials.carousel",
+  "sectionType": "testimonials",
+  "layout": "carousel",
+  "style": ["modern-minimal", "editorial-serif", "corporate", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "TestimonialsCarousel.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Single large centered quote with prev/next arrows and dot pagination, cross-fading between testimonials — good for a small number of high-impact quotes."
+}

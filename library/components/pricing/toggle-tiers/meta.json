@@ -1,0 +1,20 @@
+{
+  "id": "pricing.toggle-tiers",
+  "sectionType": "pricing",
+  "layout": "toggle-tiers",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "dark-tech"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "PricingToggleTiers.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "tiers": { "type": "array" }
+  },
+  "previewDescription": "Same 3-tier card layout as pricing.tiers-3 but adds a monthly/yearly toggle switch above the cards that swaps displayed prices client-side."
+}

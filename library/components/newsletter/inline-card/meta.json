@@ -1,0 +1,12 @@
+{
+  "id": "newsletter.inline-card",
+  "sectionType": "newsletter",
+  "layout": "inline-card",
+  "style": ["modern-minimal", "corporate", "glassmorphism", "playful-rounded"],
+  "industry": ["*"],
+  "tone": ["friendly", "professional", "minimal"],
+  "entry": "NewsletterInlineCard.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "subheading": { "type": "string" }, "buttonLabel": { "type": "string" }, "privacyText": { "type": "string" } },
+  "complexity": "section",
+  "previewDescription": "Production-ready newsletter card with responsive email form and success state."
+}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/generated/ui/button";
 
 export interface CtaSplitImageProps {
@@ -19,7 +20,7 @@ export default function CtaSplitImage({
   ctaLabel = "Get Started",
   ctaHref = "#",
   imageUrl,
-  imageAlt = "",
+  imageAlt = "Promotional visual",
 }: CtaSplitImageProps) {
   return (
     <section className="py-20 md:py-28">
@@ -44,8 +45,13 @@ export default function CtaSplitImage({
 
           {imageUrl && (
             <div className="relative h-64 md:h-full">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={imageUrl} alt={imageAlt} className="h-full w-full object-cover" />
+              <Image
+                src={imageUrl}
+                alt={imageAlt}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           )}
         </div>

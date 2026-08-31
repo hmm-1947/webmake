@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/generated/ui/button";
 
 export interface HeroSplitImageProps {
@@ -63,8 +64,14 @@ export default function HeroSplitImage({
           transition={{ duration: 0.6, delay: 0.15 }}
           className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border shadow"
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={imageUrl} alt={imageAlt} className="h-full w-full object-cover" />
+          <Image
+            src={imageUrl}
+            alt={imageAlt}
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+            priority
+          />
         </motion.div>
       </div>
     </section>

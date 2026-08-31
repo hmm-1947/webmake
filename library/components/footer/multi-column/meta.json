@@ -16,5 +16,7 @@
     "columns": { "type": "array" },
     "socialLinks": { "type": "array" }
   },
+  "featureOptions":{"columns":true,"socialLinks":true,"tagline":true,"newsletter":true,"appBadges":true,"languageSelector":true,"currencySelector":true,"legalLinks":true,"backToTop":true,"statusLink":true},
+  "variantAxes":{"columns":[2,3,4,5],"social":["none","icons","icons+labels"],"bottomBar":["copyright","copyright+legal","copyright+selectors"]},
   "previewDescription": "Multi-column footer with link groups, brand block, and social icons row."
 }

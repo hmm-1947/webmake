@@ -1,0 +1,28 @@
+{
+  "meta": { "name": "New Types Showcase", "description": "Exercises the expanded WebForge component library.", "industry": "agency", "tone": "professional", "siteUrl": "https://example.com" },
+  "siteType": "agency",
+  "designSystem": {
+    "style": "modern-minimal",
+    "colors": { "mode": "light", "primary": "#111827", "secondary": "#6b7280", "accent": "#4f46e5", "neutral": "#f3f4f6", "background": "#ffffff", "surface": "#f9fafb" },
+    "typography": { "headingFont": "Space Grotesk", "bodyFont": "Inter", "scale": "comfortable" },
+    "radius": "lg", "density": "regular", "shadowIntensity": "subtle"
+  },
+  "animations": { "level": "subtle", "scrollReveal": true, "hoverEffects": true, "library": "framer-motion" },
+  "pages": [{
+    "path": "/", "name": "Home", "isHome": true,
+    "sections": [
+      { "type": "navbar", "layout": "top-simple", "content": { "logoText": "Studio" } },
+      { "type": "hero", "layout": "centered", "content": { "heading": "A more distinctive web experience" } },
+      { "type": "feature-grid", "layout": "editorial-grid", "content": { "heading": "Capabilities" } },
+      { "type": "bento-grid", "layout": "spotlight", "content": { "heading": "Designed around your story" } },
+      { "type": "about", "layout": "story-split", "content": { "heading": "Built with purpose" } },
+      { "type": "content-split", "layout": "text-quote", "content": { "heading": "A clearer way forward" } },
+      { "type": "timeline", "layout": "roadmap", "content": { "heading": "From idea to impact" } },
+      { "type": "newsletter", "layout": "inline-card", "content": { "heading": "Stay in the loop" } },
+      { "type": "video-showcase", "layout": "browser-frame", "content": { "heading": "See it in action" } },
+      { "type": "blog-list", "layout": "magazine-grid", "content": { "heading": "From the journal" } },
+      { "type": "blog-post", "layout": "article-centered", "content": { "title": "A better way to think about digital experiences" } },
+      { "type": "footer", "layout": "multi-column", "content": { "logoText": "Studio" } }
+    ]
+  }]
+}

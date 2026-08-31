@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export interface TestimonialItem {
   quote: string;
   authorName: string;
@@ -38,8 +40,13 @@ export default function TestimonialsGrid3({
               </blockquote>
               <figcaption className="mt-6 flex items-center gap-3">
                 {t.avatarUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.avatarUrl} alt={t.authorName} className="h-10 w-10 rounded-full object-cover" />
+                  <Image
+                    src={t.avatarUrl}
+                    alt={`Photo of ${t.authorName}`}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
                 ) : (
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-sm font-semibold text-accent">
                     {t.authorName.charAt(0)}

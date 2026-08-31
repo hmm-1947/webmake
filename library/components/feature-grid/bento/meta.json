@@ -1,0 +1,15 @@
+{
+  "id": "feature-grid.bento",
+  "sectionType": "feature-grid",
+  "layout": "bento",
+  "style": ["modern-minimal", "corporate", "glassmorphism", "gradient-vibrant"],
+  "industry": ["saas-landing", "startup", "app-landing", "*"],
+  "tone": ["professional", "bold", "friendly"],
+  "entry": "FeatureGridBento.tsx",
+  "requires": ["lucide-react"],
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "subheading": { "type": "string" }, "items": { "type": "array" } },
+  "supportsAnimation": false,
+  "darkModeAware": true,
+  "complexity": "section",
+  "previewDescription": "Bento-style feature grid with mixed card widths, icon badges and hover accents — a livelier alternative to the editorial layout."
+}

@@ -1,0 +1,14 @@
+{
+  "id": "feature-grid.editorial",
+  "sectionType": "feature-grid",
+  "layout": "editorial-grid",
+  "style": ["editorial-serif", "modern-minimal", "monochrome"],
+  "industry": ["agency", "portfolio", "marketing", "saas-landing"],
+  "tone": ["editorial", "professional", "minimal"],
+  "entry": "FeatureGridEditorial.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "subheading": { "type": "string" }, "items": { "type": "array" } },
+  "supportsAnimation": false,
+  "darkModeAware": true,
+  "complexity": "section",
+  "previewDescription": "Editorial two-column feature layout with numbered capability cards and restrained borders."
+}

@@ -118,6 +118,7 @@ class PageSpec:
     path: str
     name: str
     is_home: bool = False
+    description: Optional[str] = None
     sections: list[SectionSpec] = field(default_factory=list)
 
     @staticmethod
@@ -126,6 +127,7 @@ class PageSpec:
             path=d["path"],
             name=d["name"],
             is_home=d.get("isHome", False),
+            description=d.get("description"),
             sections=[SectionSpec.from_dict(s) for s in d.get("sections", [])],
         )
 
@@ -152,6 +154,9 @@ class SiteMeta:
     industry: Optional[str] = None
     target_audience: Optional[str] = None
     tone: str = "professional"
+    site_url: str = "https://example.com"
+    og_image: str = "/og-image.png"
+    twitter_handle: Optional[str] = None
 
     @staticmethod
     def from_dict(d: dict) -> "SiteMeta":
@@ -161,6 +166,9 @@ class SiteMeta:
             industry=d.get("industry"),
             target_audience=d.get("targetAudience"),
             tone=d.get("tone", "professional"),
+            site_url=(d.get("siteUrl") or "https://example.com").rstrip("/"),
+            og_image=d.get("ogImage", "/og-image.png"),
+            twitter_handle=d.get("twitterHandle"),
         )
 
 
@@ -210,30 +218,22 @@ class ComponentMeta:
     complexity: str = "section"
     weight: float = 1.0
     preview_description: str = ""
-    # populated by the loader, not from JSON:
+    feature_options: dict[str, Any] = field(default_factory=dict)
+    variant_axes: dict[str, Any] = field(default_factory=dict)
     source_dir: str = ""
 
     @staticmethod
     def from_dict(d: dict, source_dir: str = "") -> "ComponentMeta":
         return ComponentMeta(
-            id=d["id"],
-            section_type=d["sectionType"],
-            layout=d.get("layout", "default"),
-            style=d.get("style", []),
-            entry=d["entry"],
-            props=d.get("props", {}),
-            industry=d.get("industry", []),
-            tone=d.get("tone", []),
-            requires=d.get("requires", []),
-            depends_on_components=d.get("dependsOnComponents", []),
-            supports_animation=d.get("supportsAnimation", True),
+            id=d["id"], section_type=d["sectionType"], layout=d.get("layout", "default"),
+            style=d.get("style", []), entry=d["entry"], props=d.get("props", {}),
+            industry=d.get("industry", []), tone=d.get("tone", []), requires=d.get("requires", []),
+            depends_on_components=d.get("dependsOnComponents", []), supports_animation=d.get("supportsAnimation", True),
             animation_level=d.get("animationLevel", ["none", "subtle", "moderate", "expressive"]),
-            dark_mode_aware=d.get("darkModeAware", True),
-            responsiveness=d.get("responsiveness", "mobile-first"),
-            complexity=d.get("complexity", "section"),
-            weight=d.get("weight", 1.0),
-            preview_description=d.get("previewDescription", ""),
-            source_dir=source_dir,
+            dark_mode_aware=d.get("darkModeAware", True), responsiveness=d.get("responsiveness", "mobile-first"),
+            complexity=d.get("complexity", "section"), weight=d.get("weight", 1.0),
+            preview_description=d.get("previewDescription", ""), feature_options=d.get("featureOptions", {}),
+            variant_axes=d.get("variantAxes", {}), source_dir=source_dir,
         )
 
 

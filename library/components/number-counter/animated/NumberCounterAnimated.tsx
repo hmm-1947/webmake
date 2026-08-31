@@ -1,0 +1,3 @@
+"use client";
+import {motion} from "framer-motion";
+export default function NumberCounterAnimated({items=[]}:{items?:{value:string;label:string}[]}){return <section className="py-16"><div className="container grid gap-8 border-y border-border py-10 sm:grid-cols-2 lg:grid-cols-4">{items.map((x,i)=><div key={i}><motion.div initial={{opacity:0,y:12}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:i*.08}} className="font-heading text-4xl font-bold">{x.value}</motion.div><p className="mt-2 text-sm text-foreground/60">{x.label}</p></div>)}</div></section>}

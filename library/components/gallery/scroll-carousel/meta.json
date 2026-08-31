@@ -1,0 +1,20 @@
+{
+  "id": "gallery.scroll-carousel",
+  "sectionType": "gallery",
+  "layout": "scroll-carousel",
+  "style": ["modern-minimal", "gradient-vibrant", "dark-tech", "corporate"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "GalleryScrollCarousel.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Horizontally scrollable, snap-aligned image carousel with left/right arrow buttons — avoids a lightbox and works well for a linear or chronological set of work."
+}

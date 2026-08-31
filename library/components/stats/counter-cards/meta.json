@@ -1,0 +1,20 @@
+{
+  "id": "stats.counter-cards",
+  "sectionType": "stats",
+  "layout": "counter-cards",
+  "style": ["modern-minimal", "corporate", "dark-tech", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "StatsCounterCards.tsx",
+  "requires": ["framer-motion"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "stats": { "type": "array" }
+  },
+  "previewDescription": "Bordered stat cards where numeric values animate up from zero when scrolled into view, with non-numeric suffixes (%, +, k) preserved as static text after the counted portion."
+}

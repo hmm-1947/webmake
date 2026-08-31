@@ -1,0 +1,21 @@
+{
+  "id": "comparison-table.feature-matrix",
+  "sectionType": "comparison-table",
+  "layout": "feature-matrix",
+  "style": ["modern-minimal", "corporate", "dark-tech", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "ComparisonTable.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "plans": { "type": "array" },
+    "rows": { "type": "array" }
+  },
+  "previewDescription": "Feature-by-feature comparison table across plans, boolean values render as check/dash icons, one plan can be visually highlighted."
+}

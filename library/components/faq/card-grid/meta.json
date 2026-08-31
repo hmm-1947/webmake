@@ -1,0 +1,20 @@
+{
+  "id": "faq.card-grid",
+  "sectionType": "faq",
+  "layout": "card-grid",
+  "style": ["modern-minimal", "playful-rounded", "gradient-vibrant", "corporate"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "FaqCardGrid.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "All FAQ answers visible at once in a 2-column card grid, rather than a collapsible accordion — better when answers are short and scannability matters more than compactness."
+}

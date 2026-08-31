@@ -1,0 +1,12 @@
+{
+  "id": "blog-post.article",
+  "sectionType": "blog-post",
+  "layout": "article-centered",
+  "style": ["editorial-serif", "modern-minimal", "monochrome"],
+  "industry": ["blog", "agency", "marketing", "personal"],
+  "tone": ["editorial", "professional", "minimal"],
+  "entry": "BlogPostArticle.tsx",
+  "props": { "category": { "type": "string" }, "title": { "type": "string" }, "excerpt": { "type": "string" }, "author": { "type": "string" }, "date": { "type": "string" }, "readTime": { "type": "string" }, "content": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Clean long-form article header and readable centered body typography for editorial pages."
+}

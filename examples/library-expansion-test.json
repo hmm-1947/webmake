@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "name": "Northlight Studio",
+    "description": "A design and engineering studio building products for ambitious startups.",
+    "industry": "agency",
+    "tone": "professional",
+    "siteUrl": "https://northlight.studio",
+    "ogImage": "/og-image.png",
+    "twitterHandle": "@northlightstudio"
+  },
+  "siteType": "agency",
+  "designSystem": {
+    "style": "modern-minimal",
+    "colors": {
+      "mode": "light",
+      "primary": "#111111",
+      "secondary": "#6b7280",
+      "accent": "#3b82f6",
+      "neutral": "#f5f5f5",
+      "background": "#ffffff",
+      "surface": "#fafafa"
+    },
+    "typography": {
+      "headingFont": "Space Grotesk",
+      "bodyFont": "Inter",
+      "scale": "comfortable"
+    },
+    "radius": "md",
+    "density": "regular",
+    "shadowIntensity": "subtle"
+  },
+  "animations": {
+    "level": "subtle",
+    "scrollReveal": true,
+    "hoverEffects": true,
+    "library": "framer-motion"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Home",
+      "isHome": true,
+      "description": "Northlight Studio designs and builds digital products for startups — from first prototype to production launch.",
+      "sections": [
+        { "type": "navbar", "layout": "top-simple", "content": {
+          "logoText": "Northlight",
+          "links": [{ "label": "Work", "href": "#work" }, { "label": "Team", "href": "#team" }, { "label": "Contact", "href": "#contact" }],
+          "ctaLabel": "Start a project",
+          "ctaHref": "#contact"
+        }},
+        { "type": "hero", "layout": "centered", "content": {
+          "eyebrow": "Design & engineering studio",
+          "heading": "We build products people actually want to use",
+          "subheading": "From first prototype to production launch, Northlight partners with founders to design and ship software that works.",
+          "primaryCtaLabel": "Start a project",
+          "primaryCtaHref": "#contact"
+        }},
+        { "type": "steps-process", "layout": "vertical-timeline", "componentHint": "steps-process.vertical-timeline", "content": {
+          "heading": "How we work",
+          "subheading": "A simple four-step process from kickoff to launch.",
+          "steps": [
+            { "title": "Discover", "description": "We learn your business, users, and constraints." },
+            { "title": "Design", "description": "Wireframes and high-fidelity prototypes you can test." },
+            { "title": "Build", "description": "Production-grade code, shipped in weekly increments." },
+            { "title": "Launch", "description": "We stay on to support your first release and beyond." }
+          ]
+        }},
+        { "type": "gallery", "layout": "filterable-grid", "componentHint": "gallery.filterable-grid", "content": {
+          "heading": "Selected work",
+          "subheading": "A few recent projects."
+        }},
+        { "type": "comparison-table", "layout": "tiered-cards", "componentHint": "comparison-table.tiered-cards", "content": {
+          "heading": "Compare engagement types",
+          "subheading": "Pick the model that fits your stage."
+        }},
+        { "type": "team", "layout": "side-list", "componentHint": "team.side-list", "content": {
+          "heading": "Meet the team",
+          "subheading": "A small team of designers and engineers.",
+          "members": [
+            { "name": "Jordan Lee", "role": "Founder", "bio": "Previously led design at a Series B fintech." },
+            { "name": "Priya Nair", "role": "Engineering Lead", "bio": "10 years building web platforms." },
+            { "name": "Sam Torres", "role": "Product Designer" }
+          ]
+        }},
+        { "type": "testimonials", "layout": "grid-3", "content": {
+          "heading": "What clients say",
+          "items": [
+            { "quote": "Northlight shipped our MVP in six weeks.", "authorName": "Dana Kim", "authorRole": "Founder, Orbital" }
+          ]
+        }},
+        { "type": "contact", "layout": "centered-simple", "componentHint": "contact.centered-simple", "content": {
+          "heading": "Let's build something",
+          "subheading": "Tell us about your project and we'll get back to you within a day.",
+          "email": "hello@northlight.studio",
+          "phone": "+1 (555) 010-2200",
+          "address": "San Francisco, CA"
+        }},
+        { "type": "footer", "layout": "multi-column", "content": {
+          "logoText": "Northlight",
+          "tagline": "A design and engineering studio."
+        }}
+      ]
+    }
+  ]
+}

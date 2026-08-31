@@ -1,0 +1,22 @@
+{
+  "id": "gallery.masonry",
+  "sectionType": "gallery",
+  "layout": "masonry",
+  "style": ["modern-minimal", "editorial-serif", "monochrome", "dark-tech", "corporate"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "GalleryMasonry.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "featureOptions":{"lightbox":true,"categories":true,"captions":true,"hoverZoom":true,"scrollReveal":true,"masonryColumns":true,"featuredItem":true,"aspectRatios":["square","portrait","landscape"]},
+  "variantAxes":{"columns":[2,3,4],"overlay":["none","caption","category+caption"],"interaction":["lightbox","link","static"]},
+  "previewDescription": "Masonry-style portfolio gallery with hover captions and a lightbox on click."
+}

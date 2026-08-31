@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export interface LogoItem {
   name: string;
   logoUrl?: string;
@@ -35,8 +37,13 @@ export default function LogoCloudMarquee({ heading, logos = defaultLogos }: Logo
           {doubled.map((logo, i) => (
             <div key={logo.name + i} className="flex shrink-0 items-center justify-center">
               {logo.logoUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={logo.logoUrl} alt={logo.name} className="h-8 w-auto opacity-60 grayscale" />
+                <Image
+                  src={logo.logoUrl}
+                  alt={`${logo.name} logo`}
+                  width={100}
+                  height={32}
+                  className="h-8 w-auto opacity-60 grayscale"
+                />
               ) : (
                 <span className="text-lg font-heading font-semibold text-foreground/40">{logo.name}</span>
               )}

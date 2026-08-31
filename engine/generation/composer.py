@@ -77,11 +77,36 @@ def build_props_jsx(match: MatchResult) -> str:
 
     attrs: list[str] = []
     for key, value in content.items():
+        # Only pass declared component props. The AI spec may contain richer
+        # content than a particular variant supports; filtering here prevents
+        # TypeScript build failures while still allowing the matcher to choose
+        # variants based on the richer content payload.
+        if prop_defs and key not in prop_defs:
+            continue
         prop_schema = prop_defs.get(key, {})
         coerced = _coerce_prop_value(value, prop_schema if isinstance(prop_schema, dict) else {})
         attrs.append(f"{key}={_jsx_literal(coerced)}")
 
     return " ".join(attrs)
+
+
+def _derive_page_description(page: PageSpec, matches: list[MatchResult], site: WebsiteSpec) -> str:
+    """Picks the best available description for a page's <meta> tag, in order:
+    1. An explicit page.description from the spec.
+    2. The hero section's subheading/description content (most representative copy).
+    3. The site-wide meta.description as a last resort (still better than nothing,
+       though duplicating it across many pages should be avoided by authoring
+       explicit descriptions for important pages)."""
+    if page.description:
+        return page.description
+    for match in matches:
+        if match.section.type == "hero":
+            content = match.section.content or {}
+            for key in ("subheading", "description", "subtitle"):
+                value = content.get(key)
+                if isinstance(value, str) and value.strip():
+                    return value.strip()
+    return site.meta.description
 
 
 def compose_page(
@@ -120,9 +145,17 @@ def compose_page(
     )
 
     is_home = page.is_home
+    page_description = _derive_page_description(page, matches, site)
+    canonical_path = "/" if is_home else page.path
+    # Home page omits `title` so it falls back to metadata.title.default set in
+    # layout.tsx (just the site name, no "| SiteName" suffix). Other pages set
+    # title to just the page name — layout's title.template appends "| SiteName".
+    title_line = "" if is_home else f'  title: "{_escape_js_string(page.name)}",\n'
     metadata_block = f"""export const metadata = {{
-  title: "{_escape_js_string(page.name)} | {_escape_js_string(site.meta.name)}",
-  description: "{_escape_js_string(site.meta.description)}",
+{title_line}  description: "{_escape_js_string(page_description)}",
+  alternates: {{
+    canonical: "{canonical_path}",
+  }},
 }};
 """
 

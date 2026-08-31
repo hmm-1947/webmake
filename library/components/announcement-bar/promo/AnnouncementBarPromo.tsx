@@ -1,0 +1,1 @@
+export default function AnnouncementBarPromo({message="New season, new places to explore",href="#"}:{message?:string;href?:string}){return <div className="w-full bg-primary px-4 py-2 text-center text-sm text-primary-foreground"><a href={href} className="font-medium underline-offset-4 hover:underline">{message} <span aria-hidden="true">→</span></a></div>}

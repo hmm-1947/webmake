@@ -1,0 +1,22 @@
+{
+  "id": "contact.inline-minimal",
+  "sectionType": "contact",
+  "layout": "inline-minimal",
+  "style": ["modern-minimal", "editorial-serif", "monochrome", "playful-rounded"],
+  "industry": ["*"],
+  "tone": ["minimal", "friendly", "editorial"],
+  "entry": "ContactInlineMinimal.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "email": { "type": "string" },
+    "phone": { "type": "string" },
+    "address": { "type": "string" }
+  },
+  "previewDescription": "No-form contact section: large headline, a big clickable mailto email link, and optional phone/address underneath. Best for portfolios or personal sites that don't need a form backend."
+}

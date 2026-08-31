@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import Image from "next/image";
 
 export interface TestimonialItem {
   quote: string;
@@ -57,8 +58,13 @@ export default function TestimonialsSingleLarge({
               </blockquote>
               <div className="mt-6 flex items-center justify-center gap-3">
                 {current.avatarUrl ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={current.avatarUrl} alt={current.authorName} className="h-12 w-12 rounded-full object-cover" />
+                  <Image
+                    src={current.avatarUrl}
+                    alt={`Photo of ${current.authorName}`}
+                    width={48}
+                    height={48}
+                    className="h-12 w-12 rounded-full object-cover"
+                  />
                 ) : (
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-sm font-semibold text-accent">
                     {current.authorName.charAt(0)}

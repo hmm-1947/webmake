@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Webmake Studio</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px Inter,system-ui,sans-serif;background:#f6f7f9;color:#17181b}button,input,textarea,select{font:inherit}button{cursor:pointer}.top{height:58px;background:#111214;color:#fff;display:flex;align-items:center;padding:0 18px;gap:18px}.brand{font-weight:750;font-size:17px}.status{font-size:12px;color:#9ca3af}.setup{font-size:11px;padding:4px 9px;border-radius:20px;background:#242529;color:#f5c451}.setup.ready{color:#7ee08a}.top .spacer{flex:1}.top button{background:#fff;color:#111;border:0;border-radius:7px;padding:8px 13px}.top button.ghost{background:transparent;color:#fff;border:1px solid #3a3b40}.app{display:grid;grid-template-columns:230px minmax(420px,1fr) 310px;height:calc(100vh - 58px)}.left,.right{background:#fff;border-color:#e5e7eb}.left{border-right:1px solid #e5e7eb;padding:16px 12px;overflow:auto}.right{border-left:1px solid #e5e7eb;padding:16px;overflow:auto}.workspace{overflow:auto;padding:18px;background:#eef0f3}.canvasbar{height:46px;display:flex;align-items:center;justify-content:center;gap:6px}.canvasbar button{border:1px solid #d8dbe0;background:#fff;border-radius:6px;padding:6px 10px;font-size:12px}.canvasbar button.active{background:#111;color:#fff}.site-preview{background:#fff;border:1px solid #d8dbe0;border-radius:12px;max-width:1180px;margin:auto;min-height:calc(100vh - 145px);box-shadow:0 12px 35px #00000012;overflow:hidden}.preview-section{position:relative;min-height:180px;padding:48px 7%;border:2px solid transparent;transition:.15s}.preview-section:hover{border-color:#a79fff}.preview-section.selected{border-color:#6d5dfc;background:#fafaff}.preview-section .edit-tag{display:none;position:absolute;top:8px;right:8px;background:#6d5dfc;color:#fff;border-radius:5px;padding:4px 7px;font-size:10px}.preview-section:hover .edit-tag,.preview-section.selected .edit-tag{display:block}.preview-hero{min-height:430px;display:flex;align-items:center;background:linear-gradient(120deg,#dfe7f1,#f7f3ed)}.preview-media{margin-top:18px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#d9e2ec,#eee5d8);min-height:130px;display:grid;place-items:center;color:#667085}.preview-media img,.preview-media video{width:100%;max-height:320px;object-fit:cover}.preview-video{min-height:190px;background:linear-gradient(135deg,#111827,#334155);color:#fff;display:grid;place-items:center;font-size:28px}.preview-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}.preview-card{min-height:130px;border:1px solid #e5e7eb;border-radius:14px;padding:18px;background:#fff}.navtitle{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:#8b9098;margin:15px 8px 7px}.navitem{padding:10px 11px;border-radius:7px;margin:2px 0;cursor:pointer}.navitem:hover,.navitem.active{background:#eef0f3}.page{background:#fff;border:1px solid #ddd;border-radius:14px;max-width:980px;margin:auto;min-height:700px;box-shadow:0 8px 30px #0000000b}.pagehead{padding:18px 22px;border-bottom:1px solid #eee;display:flex;align-items:center;gap:10px}.section{position:relative;border:1px solid transparent;padding:24px;margin:8px;border-radius:10px}.section:hover,.section.selected{border-color:#6d5dfc;background:#fafaff}.section.selected:after{content:'Selected';position:absolute;right:8px;top:-9px;background:#6d5dfc;color:white;border-radius:5px;padding:2px 6px;font-size:10px}.section h2{font-size:30px;margin:0 0 8px}.section p{color:#6b7280;line-height:1.6}.badge{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee;font-size:11px;margin-bottom:9px}.btn{display:inline-block;background:#111;color:#fff;padding:10px 15px;border-radius:7px;margin:5px 4px 0 0}.muted{color:#737780;font-size:12px}.field{margin:15px 0}.field label{display:block;font-size:12px;font-weight:600;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:1px solid #d7d9de;border-radius:7px;padding:9px;background:#fff}.field textarea{min-height:72px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.paneltitle{font-weight:700;margin-bottom:15px}.tool{display:flex;gap:7px;margin:7px 0}.tool button{flex:1;border:1px solid #ddd;background:#fff;border-radius:7px;padding:8px}.primary{background:#111!important;color:#fff;border-color:#111!important}.danger{color:#b42318}.divider{height:1px;background:#eee;margin:18px 0}.asset{border:1px dashed #cdd0d5;border-radius:8px;padding:12px;margin:7px 0}.asset img{width:100%;max-height:120px;object-fit:cover;border-radius:6px}.sectionlist button{width:100%;text-align:left;background:#fff;border:1px solid #eee;padding:9px;border-radius:6px;margin:3px 0}.empty{padding:45px;text-align:center;color:#777}.toast{position:fixed;right:20px;bottom:20px;background:#111;color:#fff;padding:11px 15px;border-radius:8px;display:none;max-width:360px}.small{font-size:11px}.check{display:flex;gap:8px;align-items:center;margin:9px 0}.color{width:42px!important;padding:2px!important;height:35px}.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.media-grid .asset{margin:0}.mediafield{border:1px dashed #cdd0d5;border-radius:8px;padding:8px}.mediafield .thumb{width:100%;max-height:110px;object-fit:cover;border-radius:6px;margin-bottom:6px;display:block}.mediafield .placeholder{height:70px;background:#f2f3f5;border-radius:6px;display:grid;place-items:center;color:#98a0aa;font-size:11px;margin-bottom:6px}.mediafield input[type=file]{font-size:11px}.mediafield .clear{font-size:11px;color:#b42318;background:none;border:0;padding:4px 0;text-align:left}
+</style></head>
+<body><header class="top"><div class="brand">Webmake <span style="font-weight:400">Studio</span></div><span id="siteStatus" class="status">Loading…</span><span id="setupStatus" class="setup">Checking live site…</span><div class="spacer"></div><button class="ghost" onclick="openLiveSite()">Open live site ↗</button><button onclick="preview()">Quick preview</button><button onclick="save()">Save</button></header>
+<div class="app"><aside class="left"><div class="navtitle">Website</div><div id="pages"></div><div class="navtitle">Workspace</div><div class="navitem" onclick="showAssets()">▧ Media library</div><div class="navitem" onclick="showDesign()">◈ Design system</div><div class="navitem" onclick="showSiteJson()">{ } Site JSON</div><div class="navtitle">Insert</div><div id="insertList"></div></aside><main class="workspace"><div id="canvas" class="page"></div></main><aside class="right"><div id="properties"><div class="paneltitle">Properties</div><p class="muted">Select a section to edit its content, media, layout and behavior.</p></div></aside></div><div id="toast" class="toast"></div>
+<script>
+let site=null,currentPage=0,currentSection=-1,setupInfo=null;const $=id=>document.getElementById(id);const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+
+async function load(){
+ site=await (await fetch('/api/site')).json();
+ renderPages();renderInsert();renderPage();
+ $('siteStatus').textContent=(site.meta?.name||'Untitled site')+' · Draft';
+ refreshSetup();
+}
+async function refreshSetup(){
+ try{
+  setupInfo=await (await fetch('/api/setup')).json();
+  const el=$('setupStatus');
+  if(!setupInfo.engineAvailable){el.textContent='Engine unavailable';el.classList.remove('ready');return}
+  if(!setupInfo.nodeModulesExists){
+   el.textContent='Live site: run npm install once';
+   el.classList.remove('ready');
+  }else{
+   el.textContent='Live site ready · localhost:3000';
+   el.classList.add('ready');
+  }
+ }catch(e){$('setupStatus').textContent='Live site status unknown'}
+}
+function currentPagePath(){return (site.pages?.[currentPage]?.path)||'/'}
+function openLiveSite(){
+ const path=currentPagePath();
+ window.open('http://localhost:3000'+(path==='/'?'':path),'_blank');
+}
+
+function renderPages(){let h='';(site.pages||[]).forEach((p,i)=>h+=`<div class="navitem ${i===currentPage?'active':''}" onclick="selectPage(${i})">${esc(p.name||'Untitled')}<div class="small muted">${esc(p.path||'/')}</div></div>`);$('pages').innerHTML=h||'<div class="muted">No pages</div>'}
+function selectPage(i){currentPage=i;currentSection=-1;renderPages();renderPage()}
+function renderPage(){let p=site.pages?.[currentPage];if(!p){$('canvas').innerHTML='<div class="empty">No page selected.</div>';return}let sections=p.sections||[];let h=`<div class="canvasbar"><button class="active">Desktop</button><button>Tablet</button><button>Mobile</button><span class="muted">Click any section to edit</span></div><div class="site-preview"><div class="pagehead"><b>${esc(p.name||'Page')}</b><span class="muted">${esc(p.path||'/')}</span></div>`;sections.forEach((s,i)=>{let c=s.content||{};let heading=c.heading||c.title||s.type.replaceAll('-',' ');let desc=c.description||c.subheading||'';let media=c.imageUrl?`<div class="preview-media"><img src="${esc(c.imageUrl)}" alt=""></div>`:c.videoUrl?`<div class="preview-media"><video src="${esc(c.videoUrl)}" muted></video></div>`:`<div class="preview-media"><span>Media placeholder · upload an image or video</span></div>`;let cards=Array.isArray(c.items)&&c.items.length?`<div class="preview-cards">${c.items.slice(0,3).map(x=>`<div class="preview-card"><b>${esc(x.title||x.name||'Feature')}</b><p>${esc(x.description||'')}</p></div>`).join('')}</div>`:'';h+=`<div class="preview-section ${i===currentSection?'selected':''} ${/hero/i.test(s.type)?'preview-hero':''}" onclick="selectSection(${i})"><span class="edit-tag">✎ Edit section</span><span class="badge">${esc(s.type)} · ${esc(s.layout||'default')}</span><div style="max-width:900px"><div style="font-size:12px;color:#777">${esc(c.eyebrow||'')}</div><h2>${esc(heading)}</h2>${desc?`<p>${esc(desc)}</p>`:''}${c.primaryButton?`<span class="btn">${esc(c.primaryButton.label||c.primaryButton)}</span>`:''}${c.secondaryButton?`<span class="btn" style="background:#eee;color:#111">${esc(c.secondaryButton.label||c.secondaryButton)}</span>`:''}${media}${cards}</div></div>`});h+='</div>';$('canvas').innerHTML=h;renderProperties()}
+function selectSection(i){currentSection=i;renderPage()}
+function content(){return site.pages[currentPage].sections[currentSection].content||(site.pages[currentPage].sections[currentSection].content={})}
+function field(key,label,type='text'){let v=content()[key]??'';return `<div class="field"><label>${label}</label>${type==='textarea'?`<textarea onchange="setv('${key}',this.value)">${esc(v)}</textarea>`:`<input value="${esc(v)}" onchange="setv('${key}',this.value)">`}</div>`}
+
+function mediaField(key,label,accept,kind){
+ let v=content()[key]||'';
+ let preview = v ? (kind==='video' ? `<video class="thumb" src="${esc(v)}" muted controls></video>` : `<img class="thumb" src="${esc(v)}" alt="">`) : `<div class="placeholder">No ${kind} uploaded</div>`;
+ let clearBtn = v ? `<button type="button" class="clear" onclick="clearMedia('${key}')">Remove ${kind}</button>` : '';
+ return `<div class="field"><label>${label}</label><div class="mediafield">${preview}<input type="file" accept="${accept}" onchange="uploadMediaField('${key}',this)">${clearBtn}</div></div>`;
+}
+async function uploadMediaField(key,inputEl){
+ const file=inputEl.files && inputEl.files[0]; if(!file) return;
+ toast('Uploading…');
+ try{
+  let d=new FormData(); d.append('file',file);
+  const r=await fetch('/api/media',{method:'POST',body:d});
+  const j=await r.json();
+  if(!r.ok||!j.ok){toast('Upload failed: '+(j.error||'unknown error'));return}
+  const absoluteUrl=location.origin+j.url;
+  setv(key,absoluteUrl);
+  toast('Uploaded');
+ }catch(e){toast('Upload failed')}
+}
+function clearMedia(key){setv(key,'')}
+
+function setv(k,v){content()[k]=v;renderPage();currentSection=Array.from(site.pages[currentPage].sections).indexOf(site.pages[currentPage].sections[currentSection])}
+function renderProperties(){let box=$('properties');if(currentSection<0){box.innerHTML='<div class="paneltitle">Properties</div><p class="muted">Select a section in the canvas.</p>';return}let s=site.pages[currentPage].sections[currentSection],c=s.content||{};box.innerHTML=`<div class="paneltitle">${esc(s.type)}</div><div class="muted">${esc(s.layout||'default')}</div><div class="divider"></div>`+field('heading','Heading')+field('subheading','Subheading')+field('description','Description','textarea')+field('eyebrow','Eyebrow')+mediaField('imageUrl','Image','image/*','image')+mediaField('videoUrl','Video','video/*','video')+`<div class="field"><label>Primary CTA</label><input value="${esc(typeof c.primaryButton==='object'?c.primaryButton.label:c.primaryButton||'')}" onchange="setButton('primaryButton','label',this.value)"><input style="margin-top:5px" placeholder="Link e.g. /booking" value="${esc(typeof c.primaryButton==='object'?c.primaryButton.href:'')}" onchange="setButton('primaryButton','href',this.value)"></div>`+`<div class="field"><label>Alignment</label><select onchange="setv('alignment',this.value)"><option ${c.alignment==='left'?'selected':''}>left</option><option ${c.alignment==='center'?'selected':''}>center</option><option ${c.alignment==='right'?'selected':''}>right</option></select></div>`+`<div class="check"><input type="checkbox" ${c.autoplay?'checked':''} onchange="setv('autoplay',this.checked)"> Autoplay video</div><div class="check"><input type="checkbox" ${c.loop?'checked':''} onchange="setv('loop',this.checked)"> Loop media</div><div class="divider"></div><div class="tool"><button onclick="moveSection(-1)">↑ Move</button><button onclick="moveSection(1)">↓ Move</button></div><div class="tool"><button onclick="duplicateSection()">Duplicate</button><button class="danger" onclick="deleteSection()">Delete</button></div>`}
+function setButton(name,k,v){let c=content();if(typeof c[name]!=='object')c[name]={label:typeof c[name]==='string'?c[name]:'',href:'#'};c[name][k]=v;renderPage()}
+function moveSection(d){let a=site.pages[currentPage].sections,n=currentSection,j=n+d;if(j<0||j>=a.length)return;[a[n],a[j]]=[a[j],a[n]];currentSection=j;renderPage()}
+function duplicateSection(){let a=site.pages[currentPage].sections;a.splice(currentSection+1,0,structuredClone(a[currentSection]));currentSection++;renderPage();toast('Section duplicated')}
+function deleteSection(){if(confirm('Delete this section?')){site.pages[currentPage].sections.splice(currentSection,1);currentSection=-1;renderPage()}}
+function renderInsert(){let types=['hero','features','gallery','testimonials','cta','pricing','faq','contact','video-hero','interactive-gallery','experience-cards','parallax','booking-search','itinerary','stats','team','newsletter','footer'];$('insertList').innerHTML=types.map(t=>`<div class="navitem" onclick="addSection('${t}')">+ ${t.replaceAll('-',' ')}</div>`).join('')}
+function addSection(type){site.pages[currentPage].sections.push({type,layout:'default',content:{heading:'New '+type.replaceAll('-',' '),description:'Edit this section from the properties panel.'}});currentSection=site.pages[currentPage].sections.length-1;renderPage()}
+
+async function save(){
+ toast('Saving…');
+ try{
+  let r=await fetch('/api/site',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(site)});
+  let j=await r.json().catch(()=>({}));
+  if(!r.ok){toast('Save failed: '+(j.error||'unknown error'));return}
+  if(j.regenerated){
+   toast('Saved · site regenerated on port 3000');
+  }else{
+   let msg=j.site?.error||'Saved, but site regeneration failed';
+   toast('Saved · '+msg);
+  }
+  refreshSetup();
+ }catch(e){toast('Save failed')}
+}
+
+function showAssets(){currentSection=-1;$('canvas').innerHTML='<div class="page"><div class="pagehead"><b>Media Library</b></div><div style="padding:22px"><p class="muted">Upload images and videos here, or upload directly from a section\'s Properties panel.</p><input type="file" multiple accept="image/*,video/*" onchange="upload(this.files)"><div id="assets" class="media-grid" style="margin-top:15px"></div></div></div>';loadAssets()}
+async function loadAssets(){let a=await(await fetch('/api/media')).json();$('assets').innerHTML=a.map(x=>`<div class="asset">${x.type==='image'?`<img src="${x.url}">`:`<div style="height:90px;background:#111;color:#fff;display:grid;place-items:center;border-radius:6px">▶ VIDEO</div>`}<div style="margin-top:6px;font-size:12px">${esc(x.name)}</div><button style="margin-top:6px;width:100%" onclick="copyUrl('${esc(location.origin+x.url)}')">Copy URL</button></div>`).join('')||'<p class="muted">No assets yet.</p>'}
+async function upload(files){for(const f of files){let d=new FormData();d.append('file',f);await fetch('/api/media',{method:'POST',body:d})}loadAssets()};function copyUrl(u){navigator.clipboard?.writeText(u);toast('Asset URL copied')}
+function showDesign(){currentSection=-1;$('canvas').innerHTML=`<div class="page"><div class="pagehead"><b>Design System</b></div><div style="padding:22px"><p class="muted">Global visual settings.</p><div class="row"><div class="field"><label>Primary</label><input class="color" type="color" value="${site.designSystem?.colors?.primary||'#111111'}" onchange="setColor('primary',this.value)"></div><div class="field"><label>Accent</label><input class="color" type="color" value="${site.designSystem?.colors?.accent||'#6d5dfc'}" onchange="setColor('accent',this.value)"></div></div>${fieldDesign('headingFont','Heading font',site.designSystem?.typography?.headingFont||'')}${fieldDesign('bodyFont','Body font',site.designSystem?.typography?.bodyFont||'')}<div class="field"><label>Animation level</label><select onchange="site.animations=site.animations||{};site.animations.level=this.value"><option>none</option><option>subtle</option><option selected>moderate</option><option>expressive</option></select></div></div></div>`}
+function fieldDesign(k,l,v){return `<div class="field"><label>${l}</label><input value="${esc(v)}" oninput="site.designSystem=site.designSystem||{};site.designSystem.typography=site.designSystem.typography||{};site.designSystem.typography[k]=this.value"></div>`}function setColor(k,v){site.designSystem=site.designSystem||{};site.designSystem.colors=site.designSystem.colors||{};site.designSystem.colors[k]=v}
+function showSiteJson(){currentSection=-1;$('canvas').innerHTML='<div class="page"><div class="pagehead"><b>Site JSON</b></div><div style="padding:22px"><textarea style="width:100%;height:600px;font:12px monospace" id="jsonEditor">'+esc(JSON.stringify(site,null,2))+'</textarea><button class="primary" style="margin-top:10px" onclick="applyJson()">Apply JSON</button></div></div>'}function applyJson(){try{site=JSON.parse($('jsonEditor').value);renderPages();renderPage();toast('JSON applied')}catch(e){toast('Invalid JSON')}}
+function preview(){window.open('/preview#'+encodeURIComponent(currentPagePath()),'_blank')}
+function toast(x){$('toast').textContent=x;$('toast').style.display='block';clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>$('toast').style.display='none',2400)}
+load();
+</script></body></html>

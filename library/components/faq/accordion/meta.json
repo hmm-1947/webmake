@@ -15,5 +15,7 @@
     "heading": { "type": "string" },
     "items": { "type": "array" }
   },
+  "featureOptions":{"singleOpen":true,"multiOpen":true,"search":true,"categories":true,"numbered":true,"highlightedQuestion":true,"iconVariants":["chevron","plus","minimal"]},
+  "variantAxes":{"behavior":["single-open","multi-open"],"style":["bordered","minimal","cards"],"icons":["chevron","plus","none"]},
   "previewDescription": "Accessible accordion FAQ list, one item expanded at a time."
 }

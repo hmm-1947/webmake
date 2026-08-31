@@ -1,0 +1,22 @@
+{
+  "id": "video-hero.split",
+  "sectionType": "video-hero",
+  "layout": "split",
+  "style": ["modern-minimal", "corporate", "glassmorphism"],
+  "industry": ["saas-landing", "app-landing", "startup", "*"],
+  "tone": ["professional", "friendly", "technical"],
+  "entry": "VideoHeroSplit.tsx",
+  "requires": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "props": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "videoUrl": { "type": "string" },
+    "posterUrl": { "type": "string" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  },
+  "previewDescription": "Side-by-side video hero with headline/CTA on one side and a contained video player on the other — a calmer, product-demo alternative to the full-bleed cinematic layout."
+}

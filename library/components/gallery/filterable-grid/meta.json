@@ -1,0 +1,20 @@
+{
+  "id": "gallery.filterable-grid",
+  "sectionType": "gallery",
+  "layout": "filterable-grid",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "gradient-vibrant", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "GalleryFilterableGrid.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "items": { "type": "array" }
+  },
+  "previewDescription": "Uniform square-grid gallery with clickable category filter pills, animated re-layout on filter change, and a lightbox on click."
+}

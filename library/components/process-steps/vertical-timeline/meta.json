@@ -1,0 +1,12 @@
+{
+  "id": "process-steps.vertical-timeline",
+  "sectionType": "process-steps",
+  "layout": "vertical-timeline",
+  "style": ["editorial-serif", "modern-minimal", "monochrome"],
+  "industry": ["agency", "consulting", "*"],
+  "tone": ["professional", "editorial", "minimal"],
+  "entry": "ProcessStepsVertical.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "steps": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Vertical connected timeline with numbered nodes — a more editorial alternative to the horizontal connected-steps layout."
+}

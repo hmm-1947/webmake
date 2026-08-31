@@ -1,0 +1,20 @@
+{
+  "id": "steps-process.icon-cards",
+  "sectionType": "steps-process",
+  "layout": "icon-cards",
+  "style": ["modern-minimal", "playful-rounded", "corporate", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "StepsIconCards.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "steps": { "type": "array" }
+  },
+  "previewDescription": "Four bordered cards in a grid, each with its own icon, step number, title and description — no connecting line, reads more like a feature grid than a sequence."
+}

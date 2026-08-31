@@ -1,0 +1,12 @@
+{
+  "id": "blog-list.magazine",
+  "sectionType": "blog-list",
+  "layout": "magazine-grid",
+  "style": ["editorial-serif", "modern-minimal", "monochrome"],
+  "industry": ["blog", "agency", "marketing", "portfolio", "personal"],
+  "tone": ["editorial", "professional", "minimal"],
+  "entry": "BlogListMagazine.tsx",
+  "props": { "heading": { "type": "string" }, "subheading": { "type": "string" }, "posts": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Magazine-style article grid with editorial metadata, imagery, and responsive cards."
+}

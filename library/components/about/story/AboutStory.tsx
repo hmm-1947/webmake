@@ -1,0 +1,7 @@
+import Image from "next/image";
+
+export interface AboutStoryProps { eyebrow?: string; heading?: string; body?: string; imageUrl?: string; imageAlt?: string; facts?: { value: string; label: string }[] }
+const defaultFacts = [{ value: "2018", label: "Founded" }, { value: "24", label: "People" }, { value: "18", label: "Markets" }];
+export default function AboutStory({ eyebrow = "Our story", heading = "Built with purpose, not noise", body = "We bring together thoughtful strategy, craft, and technology to create work that lasts.", imageUrl = "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=80", imageAlt = "Team collaborating", facts = defaultFacts }: AboutStoryProps) {
+  return <section className="py-20 md:py-28"><div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-20"><div className="relative aspect-[4/3] overflow-hidden rounded-2xl"><Image src={imageUrl} alt={imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div><div><p className="text-sm font-semibold uppercase tracking-[.18em] text-accent">{eyebrow}</p><h2 className="mt-3 font-heading text-3xl font-bold tracking-tight sm:text-5xl">{heading}</h2><p className="mt-6 text-lg leading-8 text-foreground/65">{body}</p><div className="mt-10 grid grid-cols-3 gap-5 border-t border-border pt-7">{facts.map(f => <div key={f.label}><p className="font-heading text-2xl font-bold">{f.value}</p><p className="mt-1 text-xs uppercase tracking-wider text-foreground/50">{f.label}</p></div>)}</div></div></div></section>;
+}

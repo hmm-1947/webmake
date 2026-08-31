@@ -1,0 +1,24 @@
+{
+  "id": "contact.centered-simple",
+  "sectionType": "contact",
+  "layout": "centered-simple",
+  "style": ["modern-minimal", "playful-rounded", "monochrome", "gradient-vibrant"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "ContactCenteredSimple.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "email": { "type": "string" },
+    "phone": { "type": "string" },
+    "address": { "type": "string" },
+    "submitLabel": { "type": "string" },
+    "action": { "type": "string" }
+  },
+  "previewDescription": "Single-column centered contact card: headline above, a boxed name/email/message form, with email/phone/address links below it. Simpler than the two-column split layout."
+}

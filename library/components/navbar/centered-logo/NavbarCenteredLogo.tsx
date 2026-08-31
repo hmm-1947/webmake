@@ -10,19 +10,12 @@ export interface NavLink {
 }
 
 export interface NavbarCenteredLogoProps {
-  logoText?: string;
-  links?: NavLink[];
-  ctaLabel?: string;
-  ctaHref?: string;
+  logoText?: string; links?: NavLink[]; ctaLabel?: string; ctaHref?: string;
+  announcement?: string; showSearch?: boolean; showThemeToggle?: boolean; activeHref?: string;
+  utilityLinks?: NavLink[]; mobileCtaLabel?: string;
 }
 
-export default function NavbarCenteredLogo({
-  logoText = "Brand",
-  links = [],
-  ctaLabel = "Get Started",
-  ctaHref = "#",
-}: NavbarCenteredLogoProps) {
-  const [open, setOpen] = React.useState(false);
+export default function NavbarCenteredLogo({logoText = "Brand",links = [],ctaLabel = "Get Started",ctaHref = "#",announcement,showSearch = false,showThemeToggle = false,activeHref,utilityLinks = [],mobileCtaLabel}: NavbarCenteredLogoProps) {
   const half = Math.ceil(links.length / 2);
   const leftLinks = links.slice(0, half);
   const rightLinks = links.slice(half);

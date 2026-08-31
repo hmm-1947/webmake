@@ -1,0 +1,24 @@
+{
+  "id": "hero.gradient-minimal",
+  "sectionType": "hero",
+  "layout": "gradient-minimal",
+  "style": ["gradient-vibrant", "modern-minimal", "glassmorphism", "monochrome"],
+  "industry": ["*"],
+  "tone": ["bold", "minimal", "playful"],
+  "entry": "HeroGradientMinimal.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "primaryCtaLabel": { "type": "string" },
+    "primaryCtaHref": { "type": "string" },
+    "secondaryCtaLabel": { "type": "string" },
+    "secondaryCtaHref": { "type": "string" }
+  },
+  "previewDescription": "No-image hero with a large soft gradient glow behind an oversized centered headline — text-only, high-impact, good for a very clean or glassy aesthetic."
+}
