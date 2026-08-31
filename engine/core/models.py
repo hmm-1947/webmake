@@ -118,6 +118,7 @@ class PageSpec:
     path: str
     name: str
     is_home: bool = False
+    description: Optional[str] = None
     sections: list[SectionSpec] = field(default_factory=list)
 
     @staticmethod
@@ -126,6 +127,7 @@ class PageSpec:
             path=d["path"],
             name=d["name"],
             is_home=d.get("isHome", False),
+            description=d.get("description"),
             sections=[SectionSpec.from_dict(s) for s in d.get("sections", [])],
         )
 
@@ -152,6 +154,9 @@ class SiteMeta:
     industry: Optional[str] = None
     target_audience: Optional[str] = None
     tone: str = "professional"
+    site_url: str = "https://example.com"
+    og_image: str = "/og-image.png"
+    twitter_handle: Optional[str] = None
 
     @staticmethod
     def from_dict(d: dict) -> "SiteMeta":
@@ -161,6 +166,9 @@ class SiteMeta:
             industry=d.get("industry"),
             target_audience=d.get("targetAudience"),
             tone=d.get("tone", "professional"),
+            site_url=(d.get("siteUrl") or "https://example.com").rstrip("/"),
+            og_image=d.get("ogImage", "/og-image.png"),
+            twitter_handle=d.get("twitterHandle"),
         )
 
 

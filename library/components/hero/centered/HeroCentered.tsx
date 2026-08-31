@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Button from "@/components/generated/ui/button";
 
 export interface HeroCenteredProps {
@@ -66,8 +67,13 @@ export default function HeroCentered({
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative mt-16 aspect-video w-full max-w-4xl overflow-hidden rounded-xl border border-border shadow-lg"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imageUrl} alt={imageAlt} className="h-full w-full object-cover" />
+            <Image
+              src={imageUrl}
+              alt={imageAlt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
           </motion.div>
         )}
       </div>

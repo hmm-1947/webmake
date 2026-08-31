@@ -135,7 +135,37 @@ const bodyFont = {body}({{ subsets: ["latin"], variable: "--font-body" }});"""
 
     dark_class = ' className="dark"' if ds.colors.mode == "dark" else ""
 
-    return f"""import type {{ Metadata }} from "next";
+    site_url = site.meta.site_url
+    og_image = site.meta.og_image
+    twitter_meta = (
+        f'\n    site: "{site.meta.twitter_handle}",' if site.meta.twitter_handle else ""
+    )
+
+    json_ld = json.dumps(
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": f"{site_url}/#organization",
+                    "name": site.meta.name,
+                    "url": site_url,
+                    "logo": f"{site_url}{og_image}",
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": f"{site_url}/#website",
+                    "url": site_url,
+                    "name": site.meta.name,
+                    "description": site.meta.description,
+                    "publisher": {"@id": f"{site_url}/#organization"},
+                },
+            ],
+        },
+        indent=2,
+    )
+
+    return f"""import type {{ Metadata, Viewport }} from "next";
 import {{ JetBrains_Mono }} from "next/font/google";
 {font_imports}
 import "./globals.css";
@@ -144,9 +174,49 @@ import "./globals.css";
 const monoFont = JetBrains_Mono({{ subsets: ["latin"], variable: "--font-mono" }});
 
 export const metadata: Metadata = {{
-  title: "{site.meta.name}",
+  metadataBase: new URL("{site_url}"),
+  title: {{
+    default: "{site.meta.name}",
+    template: "%s | {site.meta.name}",
+  }},
   description: "{site.meta.description}",
+  alternates: {{
+    canonical: "/",
+  }},
+  openGraph: {{
+    type: "website",
+    url: "{site_url}",
+    siteName: "{site.meta.name}",
+    title: "{site.meta.name}",
+    description: "{site.meta.description}",
+    images: [
+      {{
+        url: "{og_image}",
+        width: 1200,
+        height: 630,
+        alt: "{site.meta.name}",
+      }},
+    ],
+  }},
+  twitter: {{
+    card: "summary_large_image",
+    title: "{site.meta.name}",
+    description: "{site.meta.description}",
+    images: ["{og_image}"],{twitter_meta}
+  }},
+  robots: {{
+    index: true,
+    follow: true,
+  }},
 }};
+
+export const viewport: Viewport = {{
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "{site.design_system.colors.background}",
+}};
+
+const jsonLd = {json_ld};
 
 export default function RootLayout({{
   children,
@@ -156,12 +226,89 @@ export default function RootLayout({{
   return (
     <html lang="en"{dark_class} suppressHydrationWarning>
       <body className={{{font_vars}}}>
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{{{ __html: JSON.stringify(jsonLd) }}}}
+        />
         {{children}}
       </body>
     </html>
   );
 }}
 """
+
+
+def _not_found_tsx(site: WebsiteSpec) -> str:
+    return f"""import Link from "next/link";
+
+export const metadata = {{
+  title: "Page not found",
+  robots: {{ index: false, follow: false }},
+}};
+
+export default function NotFound() {{
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <p className="text-sm font-medium uppercase tracking-widest text-foreground/50">404</p>
+      <h1 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+        Page not found
+      </h1>
+      <p className="mt-4 max-w-md text-foreground/70">
+        The page you&apos;re looking for doesn&apos;t exist or may have been moved.
+      </p>
+      <Link
+        href="/"
+        className="mt-8 inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+      >
+        Back to {_escape_field(site.meta.name)}
+      </Link>
+    </main>
+  );
+}}
+"""
+
+
+def _error_tsx() -> str:
+    return """"use client";
+
+import { useEffect } from "react";
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    // Log the error to your error reporting service (e.g. Sentry) here.
+    console.error(error);
+  }, [error]);
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+      <p className="text-sm font-medium uppercase tracking-widest text-foreground/50">Error</p>
+      <h1 className="mt-4 font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+        Something went wrong
+      </h1>
+      <p className="mt-4 max-w-md text-foreground/70">
+        An unexpected error occurred while rendering this page.
+      </p>
+      <button
+        onClick={() => reset()}
+        className="mt-8 inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition hover:opacity-90"
+      >
+        Try again
+      </button>
+    </main>
+  );
+}
+"""
+
+
+def _escape_field(s: str) -> str:
+    return s.replace("\\", "\\\\").replace('"', '\\"')
 
 
 def _cn_util() -> str:
@@ -213,6 +360,58 @@ class ScaffoldError(Exception):
     pass
 
 
+def _sitemap_ts(site: WebsiteSpec) -> str:
+    """Generates app/sitemap.ts using Next's built-in MetadataRoute.Sitemap API,
+    one entry per page in the spec. Home page gets the highest priority/most
+    frequent change frequency; static/utility-feeling pages get lower priority."""
+    site_url = site.meta.site_url
+    entries: list[str] = []
+    for page in site.pages:
+        route = page.path if page.path.startswith("/") else f"/{page.path}"
+        route = "" if route == "/" else route
+        priority = "1.0" if page.is_home else "0.7"
+        change_freq = "weekly" if page.is_home else "monthly"
+        entries.append(
+            f"""    {{
+      url: `${{baseUrl}}{route}`,
+      lastModified: new Date(),
+      changeFrequency: "{change_freq}",
+      priority: {priority},
+    }},"""
+        )
+    entries_joined = "\n".join(entries)
+
+    return f"""import type {{ MetadataRoute }} from "next";
+
+const baseUrl = "{site_url}";
+
+export default function sitemap(): MetadataRoute.Sitemap {{
+  return [
+{entries_joined}
+  ];
+}}
+"""
+
+
+def _robots_ts(site: WebsiteSpec) -> str:
+    """Generates app/robots.ts allowing all crawlers and pointing at the sitemap."""
+    site_url = site.meta.site_url
+    return f"""import type {{ MetadataRoute }} from "next";
+
+export default function robots(): MetadataRoute.Robots {{
+  return {{
+    rules: [
+      {{
+        userAgent: "*",
+        allow: "/",
+      }},
+    ],
+    sitemap: "{site_url}/sitemap.xml",
+  }};
+}}
+"""
+
+
 def scaffold_project(
     site: WebsiteSpec,
     matches: dict[str, list[MatchResult]],
@@ -244,6 +443,10 @@ def scaffold_project(
     _write(os.path.join(output_dir, ".gitignore"), _gitignore())
     _write(os.path.join(app_root, "globals.css"), generate_css_variables(site.design_system))
     _write(os.path.join(app_root, "layout.tsx"), _root_layout(site))
+    _write(os.path.join(app_root, "sitemap.ts"), _sitemap_ts(site))
+    _write(os.path.join(app_root, "robots.ts"), _robots_ts(site))
+    _write(os.path.join(app_root, "not-found.tsx"), _not_found_tsx(site))
+    _write(os.path.join(app_root, "error.tsx"), _error_tsx())
     _write(os.path.join(lib_root, "utils.ts"), _cn_util())
 
     # Copy every uniquely-needed component (including dependency closure) into
