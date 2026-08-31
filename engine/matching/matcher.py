@@ -7,31 +7,24 @@ sectionType and returns the best match. Pure, deterministic, explainable
 (reasons are attached for debugging/logging) and has no dependency on any
 specific component count — scales to a registry of thousands.
 """
-from __future__ import annotations
-
 from typing import Optional
+import random
 
 from engine.core.models import (
-    AnimationSettings,
-    ComponentMeta,
-    DesignSystem,
-    MatchResult,
-    SectionSpec,
-    SiteMeta,
+    AnimationSettings, ComponentMeta, DesignSystem, MatchResult, SectionSpec, SiteMeta,
 )
 from engine.core.registry import ComponentRegistry
 
-# Weights for each scoring dimension. Tuned so style/industry dominate but
-# layout and animation compatibility still meaningfully break ties.
 WEIGHT_EXPLICIT_HINT = 1000.0
 WEIGHT_STYLE_MATCH = 12.0
 WEIGHT_INDUSTRY_MATCH = 8.0
 WEIGHT_TONE_MATCH = 5.0
 WEIGHT_LAYOUT_MATCH = 6.0
 WEIGHT_VARIANT_MATCH = 3.0
+WEIGHT_FEATURE_MATCH = 4.0
 WEIGHT_ANIMATION_COMPATIBLE = 2.0
-WEIGHT_UNIVERSAL_FALLBACK = 1.0  # components tagged industry=['*'] or [] still score something
-
+WEIGHT_UNIVERSAL_FALLBACK = 1.0
+WEIGHT_VARIETY_JITTER = 1.25
 
 class NoMatchError(Exception):
     def __init__(self, section: SectionSpec):
@@ -96,6 +89,16 @@ def score_component(
         score += WEIGHT_ANIMATION_COMPATIBLE  # anything is fine with no animation
 
     score += component.weight * 0.5
+
+    requested_features = set((section.content or {}).keys())
+    supported_features = set(component.props.keys()) | {k for k, v in component.feature_options.items() if v is True}
+    feature_hits = requested_features & supported_features
+    if feature_hits:
+        score += WEIGHT_FEATURE_MATCH * min(len(feature_hits), 5)
+        reasons.append(f"feature compatibility: {', '.join(sorted(feature_hits)[:5])}")
+
+    if not section.component_hint:
+        score += random.uniform(0, WEIGHT_VARIETY_JITTER)
 
     return score, reasons
 

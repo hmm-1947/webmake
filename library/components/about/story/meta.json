@@ -1,0 +1,12 @@
+{
+  "id": "about.story",
+  "sectionType": "about",
+  "layout": "story-split",
+  "style": ["modern-minimal", "editorial-serif", "corporate", "monochrome"],
+  "industry": ["agency", "portfolio", "nonprofit", "startup", "restaurant"],
+  "tone": ["professional", "editorial", "friendly", "luxury"],
+  "entry": "AboutStory.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "body": { "type": "string" }, "imageUrl": { "type": "string" }, "imageAlt": { "type": "string" }, "facts": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Story-driven about section with editorial copy, image, and compact proof metrics."
+}

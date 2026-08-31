@@ -1,0 +1,21 @@
+{
+  "id": "navbar.floating-pill",
+  "sectionType": "navbar",
+  "layout": "floating-pill",
+  "style": ["playful-rounded", "glassmorphism", "gradient-vibrant", "modern-minimal"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "NavbarFloatingPill.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "logoText": { "type": "string" },
+    "links": { "type": "array" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" }
+  },
+  "previewDescription": "Floating pill-shaped navbar inset from the page edges with a rounded backdrop-blur bar and rounded CTA button, instead of a full-width bordered bar."
+}

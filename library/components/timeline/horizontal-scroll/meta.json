@@ -1,0 +1,12 @@
+{
+  "id": "timeline.horizontal-scroll",
+  "sectionType": "timeline",
+  "layout": "horizontal-scroll",
+  "style": ["modern-minimal", "corporate", "gradient-vibrant"],
+  "industry": ["startup", "saas-landing", "*"],
+  "tone": ["professional", "bold", "friendly"],
+  "entry": "TimelineHorizontal.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "items": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Horizontally scrollable year-by-year milestone timeline — a company-history alternative to the vertical roadmap layout."
+}

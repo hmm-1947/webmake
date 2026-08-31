@@ -20,7 +20,17 @@
     "secondaryCtaLabel": { "type": "string" },
     "secondaryCtaHref": { "type": "string" },
     "imageUrl": { "type": "string" },
-    "imageAlt": { "type": "string" }
+    "imageAlt": { "type": "string" },
+    "badge": { "type": "string" },
+    "trustText": { "type": "string" },
+    "rating": { "type": "number" },
+    "reviewCount": { "type": "string" },
+    "stats": { "type": "array" },
+    "floatingCard": { "type": "object" },
+    "showPlayButton": { "type": "boolean" },
+    "alignment": { "type": "string", "enum": ["center", "left"] }
   },
-  "previewDescription": "Centered hero with headline, CTAs, and an optional wide preview image below."
+  "featureOptions": {"badge":true,"trustSignals":true,"ratings":true,"reviewCount":true,"stats":true,"floatingCard":true,"videoPlayButton":true,"alignment":true,"imageFallback":true,"dualCta":true},
+  "variantAxes": {"alignment":["center","left"],"media":["image","video","gradient","none"],"ctaCount":[1,2],"trust":["none","rating","text","rating+text"],"overlay":["none","floating-card"]},
+  "previewDescription": "Centered hero with headline, CTAs, media, trust signals, statistics, floating card and multiple composition choices."
 }

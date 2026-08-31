@@ -218,30 +218,22 @@ class ComponentMeta:
     complexity: str = "section"
     weight: float = 1.0
     preview_description: str = ""
-    # populated by the loader, not from JSON:
+    feature_options: dict[str, Any] = field(default_factory=dict)
+    variant_axes: dict[str, Any] = field(default_factory=dict)
     source_dir: str = ""
 
     @staticmethod
     def from_dict(d: dict, source_dir: str = "") -> "ComponentMeta":
         return ComponentMeta(
-            id=d["id"],
-            section_type=d["sectionType"],
-            layout=d.get("layout", "default"),
-            style=d.get("style", []),
-            entry=d["entry"],
-            props=d.get("props", {}),
-            industry=d.get("industry", []),
-            tone=d.get("tone", []),
-            requires=d.get("requires", []),
-            depends_on_components=d.get("dependsOnComponents", []),
-            supports_animation=d.get("supportsAnimation", True),
+            id=d["id"], section_type=d["sectionType"], layout=d.get("layout", "default"),
+            style=d.get("style", []), entry=d["entry"], props=d.get("props", {}),
+            industry=d.get("industry", []), tone=d.get("tone", []), requires=d.get("requires", []),
+            depends_on_components=d.get("dependsOnComponents", []), supports_animation=d.get("supportsAnimation", True),
             animation_level=d.get("animationLevel", ["none", "subtle", "moderate", "expressive"]),
-            dark_mode_aware=d.get("darkModeAware", True),
-            responsiveness=d.get("responsiveness", "mobile-first"),
-            complexity=d.get("complexity", "section"),
-            weight=d.get("weight", 1.0),
-            preview_description=d.get("previewDescription", ""),
-            source_dir=source_dir,
+            dark_mode_aware=d.get("darkModeAware", True), responsiveness=d.get("responsiveness", "mobile-first"),
+            complexity=d.get("complexity", "section"), weight=d.get("weight", 1.0),
+            preview_description=d.get("previewDescription", ""), feature_options=d.get("featureOptions", {}),
+            variant_axes=d.get("variantAxes", {}), source_dir=source_dir,
         )
 
 

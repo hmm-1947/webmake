@@ -1,0 +1,21 @@
+{
+  "id": "comparison-table.plan-tabs",
+  "sectionType": "comparison-table",
+  "layout": "plan-tabs",
+  "style": ["modern-minimal", "playful-rounded", "corporate", "dark-tech"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "ComparisonPlanTabs.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "plans": { "type": "array" },
+    "rows": { "type": "array" }
+  },
+  "previewDescription": "Single narrow card with a plan-switcher tab strip above it; selecting a plan cross-fades its feature list and price — a compact, mobile-friendly alternative to a wide table or 3-up cards."
+}

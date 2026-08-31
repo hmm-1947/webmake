@@ -1,0 +1,21 @@
+{
+  "id": "comparison-table.tiered-cards",
+  "sectionType": "comparison-table",
+  "layout": "tiered-cards",
+  "style": ["modern-minimal", "playful-rounded", "gradient-vibrant", "corporate"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "ComparisonTieredCards.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "plans": { "type": "array" },
+    "rows": { "type": "array" }
+  },
+  "previewDescription": "Three pricing/feature cards side-by-side, each listing the same feature rows with check/dash icons and its own CTA — a card-based alternative to a plain comparison table."
+}

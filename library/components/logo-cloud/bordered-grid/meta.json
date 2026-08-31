@@ -1,0 +1,18 @@
+{
+  "id": "logo-cloud.bordered-grid",
+  "sectionType": "logo-cloud",
+  "layout": "bordered-grid",
+  "style": ["modern-minimal", "corporate", "monochrome", "neo-brutalist"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "LogoCloudBorderedGrid.tsx",
+  "requires": [],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "props": {
+    "heading": { "type": "string" },
+    "logos": { "type": "array" }
+  },
+  "previewDescription": "Logos arranged in a bordered grid of even cells (up to 6 columns), each cell highlighting on hover — more structured/dense than a loose wrapped row, works well for longer logo lists."
+}

@@ -77,6 +77,12 @@ def build_props_jsx(match: MatchResult) -> str:
 
     attrs: list[str] = []
     for key, value in content.items():
+        # Only pass declared component props. The AI spec may contain richer
+        # content than a particular variant supports; filtering here prevents
+        # TypeScript build failures while still allowing the matcher to choose
+        # variants based on the richer content payload.
+        if prop_defs and key not in prop_defs:
+            continue
         prop_schema = prop_defs.get(key, {})
         coerced = _coerce_prop_value(value, prop_schema if isinstance(prop_schema, dict) else {})
         attrs.append(f"{key}={_jsx_literal(coerced)}")

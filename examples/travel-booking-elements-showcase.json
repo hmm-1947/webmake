@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "name": "Travel Booking Elements Showcase",
+    "description": "A reference site JSON that exercises the current WebForge component library for a professional travel and travel-booking website.",
+    "industry": "travel",
+    "tone": "luxury",
+    "siteUrl": "https://example.com"
+  },
+  "siteType": "ecommerce",
+  "designSystem": {
+    "style": "editorial-serif",
+    "colors": {
+      "mode": "light",
+      "primary": "#0f172a",
+      "secondary": "#475569",
+      "accent": "#0ea5a4",
+      "neutral": "#f1f5f9",
+      "background": "#ffffff",
+      "surface": "#f8fafc"
+    },
+    "typography": {
+      "headingFont": "Plus Jakarta Sans",
+      "bodyFont": "Inter",
+      "scale": "comfortable"
+    },
+    "radius": "lg",
+    "density": "regular",
+    "shadowIntensity": "subtle"
+  },
+  "animations": {
+    "level": "subtle",
+    "scrollReveal": true,
+    "hoverEffects": true,
+    "library": "framer-motion"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "name": "Home",
+      "isHome": true,
+      "description": "Travel discovery and booking showcase using the current component types.",
+      "sections": [
+        { "type": "navbar", "layout": "floating-pill", "content": { "logoText": "Wanderly" } },
+        { "type": "hero", "layout": "split-image", "content": { "heading": "Find your next unforgettable journey", "subheading": "Discover destinations, stays and experiences in one place." } },
+        { "type": "stats", "layout": "counter-cards", "content": { "heading": "Travel with confidence" } },
+        { "type": "feature-grid", "layout": "editorial-grid", "content": { "heading": "Everything you need to plan" } },
+        { "type": "gallery", "layout": "scroll-carousel", "content": { "heading": "Trending destinations" } },
+        { "type": "bento-grid", "layout": "spotlight", "content": { "heading": "Explore travel your way" } },
+        { "type": "features", "layout": "alternating-rows", "content": { "heading": "A smoother booking experience" } },
+        { "type": "steps-process", "layout": "numbered", "content": { "heading": "Book in three simple steps" } },
+        { "type": "testimonials", "layout": "single-large", "content": { "heading": "Loved by travelers" } },
+        { "type": "faq", "layout": "two-column", "content": { "heading": "Frequently asked questions" } },
+        { "type": "newsletter", "layout": "inline-card", "content": { "heading": "Get travel inspiration" } },
+        { "type": "cta", "layout": "split-image", "content": { "heading": "Ready to go somewhere new?" } },
+        { "type": "footer", "layout": "split-social", "content": { "logoText": "Wanderly" } }
+      ]
+    },
+    {
+      "path": "/compare",
+      "name": "Compare",
+      "sections": [
+        { "type": "navbar", "layout": "centered-logo", "content": { "logoText": "Wanderly" } },
+        { "type": "comparison-table", "layout": "feature-matrix", "content": { "heading": "Compare travel packages" } },
+        { "type": "pricing", "layout": "tiers-3", "content": { "heading": "Choose your travel style" } },
+        { "type": "footer", "layout": "multi-column", "content": { "logoText": "Wanderly" } }
+      ]
+    }
+  ],
+  "currentLibraryInventory": {
+    "totalComponents": 55,
+    "sectionTypes": 25,
+    "typesWithThreeVariants": [
+      "comparison-table",
+      "contact",
+      "cta",
+      "faq",
+      "features",
+      "footer",
+      "gallery",
+      "hero",
+      "logo-cloud",
+      "navbar",
+      "pricing",
+      "stats",
+      "steps-process",
+      "team",
+      "testimonials"
+    ],
+    "typesWithOneVariant": [
+      "about",
+      "bento-grid",
+      "blog-list",
+      "blog-post",
+      "content-split",
+      "feature-grid",
+      "newsletter",
+      "timeline",
+      "video-showcase"
+    ],
+    "atomTypes": ["ui.button"]
+  }
+}

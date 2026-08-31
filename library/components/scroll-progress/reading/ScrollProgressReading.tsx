@@ -1,0 +1,3 @@
+"use client";
+import {useEffect,useState} from "react";
+export default function ScrollProgressReading(){const [p,setP]=useState(0);useEffect(()=>{const f=()=>setP(Math.min(100,(scrollY/(document.documentElement.scrollHeight-innerHeight))*100));addEventListener("scroll",f,{passive:true});f();return()=>removeEventListener("scroll",f)},[]);return <div aria-hidden="true" className="fixed left-0 top-0 z-[100] h-1 w-full bg-transparent"><div className="h-full bg-primary transition-[width] duration-100" style={{width:`${p}%`}}/></div>}

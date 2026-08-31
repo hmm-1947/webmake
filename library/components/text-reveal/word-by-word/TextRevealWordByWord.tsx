@@ -1,0 +1,3 @@
+"use client";
+import { motion } from "framer-motion";
+export default function TextRevealWordByWord({eyebrow="The journey",heading="Travel changes the way you see the world."}:{eyebrow?:string;heading?:string}){return <section className="py-24 md:py-40"><div className="container max-w-5xl"><p className="text-sm font-semibold uppercase tracking-[.2em] text-accent">{eyebrow}</p><h2 className="mt-6 font-heading text-4xl font-bold leading-tight sm:text-6xl">{heading.split(" ").map((word,i)=><motion.span key={i} initial={{opacity:0,y:18}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-10%"}} transition={{delay:i*.045}} className="mr-[.25em] inline-block">{word}</motion.span>)}</h2></div></section>}

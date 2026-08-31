@@ -1,0 +1,3 @@
+"use client";
+import {useState} from "react";
+export default function FilterExplorerChips({categories=["All","Popular","New","Adventure","Relaxation"]}:{categories?:string[]}){const [active,setActive]=useState(categories[0]);return <div className="container py-6"><div className="flex gap-2 overflow-x-auto pb-2 [scrollbar-width:none]">{categories.map(c=><button key={c} onClick={()=>setActive(c)} className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm transition ${active===c?"bg-primary text-primary-foreground":"bg-background"}`}>{c}</button>)}</div></div>}

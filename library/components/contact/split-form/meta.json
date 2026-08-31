@@ -1,0 +1,26 @@
+{
+  "id": "contact.split-form",
+  "sectionType": "contact",
+  "layout": "split-form",
+  "style": ["modern-minimal", "corporate", "playful-rounded", "dark-tech", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "ContactSplitForm.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "email": { "type": "string" },
+    "phone": { "type": "string" },
+    "address": { "type": "string" },
+    "submitLabel": { "type": "string" },
+    "action": { "type": "string" }
+  },
+  "featureOptions":{"name":true,"email":true,"phone":true,"message":true,"company":true,"subject":true,"budget":true,"fileUpload":true,"consent":true,"successState":true,"contactDetails":true,"map":true},
+  "variantAxes":{"layout":["split","stacked","card"],"fields":["basic","business","project-inquiry"],"sideContent":["contact-details","image","map"]},
+  "previewDescription": "Split contact section: info + links on the left, a name/email/message form on the right. Form posts to `action` (point at your own API route or a form backend); does not send email itself."
+}

@@ -1,0 +1,27 @@
+{
+  "meta": { "name": "Uniqueness Test", "description": "Exercises the 5 newest variants.", "siteUrl": "https://example.com" },
+  "siteType": "agency",
+  "designSystem": {
+    "style": "modern-minimal",
+    "colors": { "mode": "light", "primary": "#111111", "secondary": "#6b7280", "accent": "#3b82f6", "neutral": "#f5f5f5", "background": "#ffffff", "surface": "#fafafa" },
+    "typography": { "headingFont": "Space Grotesk", "bodyFont": "Inter", "scale": "comfortable" },
+    "radius": "md", "density": "regular", "shadowIntensity": "subtle"
+  },
+  "animations": { "level": "moderate", "scrollReveal": true, "hoverEffects": true, "library": "framer-motion" },
+  "pages": [
+    {
+      "path": "/", "name": "Home", "isHome": true,
+      "description": "Test page for the second batch of new variants.",
+      "sections": [
+        { "type": "navbar", "layout": "top-simple", "content": { "logoText": "Test" } },
+        { "type": "hero", "layout": "centered", "content": { "heading": "Testing new variants" } },
+        { "type": "comparison-table", "layout": "plan-tabs", "componentHint": "comparison-table.plan-tabs", "content": { "heading": "Compare plans" } },
+        { "type": "contact", "layout": "inline-minimal", "componentHint": "contact.inline-minimal", "content": { "heading": "Say hello", "email": "hello@example.com" } },
+        { "type": "gallery", "layout": "scroll-carousel", "componentHint": "gallery.scroll-carousel", "content": { "heading": "Selected work" } },
+        { "type": "steps-process", "layout": "icon-cards", "componentHint": "steps-process.icon-cards", "content": { "heading": "How it works" } },
+        { "type": "team", "layout": "compact-grid", "componentHint": "team.compact-grid", "content": { "heading": "Meet the team" } },
+        { "type": "footer", "layout": "simple-centered", "content": { "logoText": "Test" } }
+      ]
+    }
+  ]
+}

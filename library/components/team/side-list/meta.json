@@ -1,0 +1,20 @@
+{
+  "id": "team.side-list",
+  "sectionType": "team",
+  "layout": "side-list",
+  "style": ["modern-minimal", "corporate", "editorial-serif", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "TeamSideList.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "members": { "type": "array" }
+  },
+  "previewDescription": "Vertical divided list of team members with a left-aligned photo, name, role and bio in a single row per person — reads more editorial than a grid."
+}

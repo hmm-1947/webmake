@@ -1,0 +1,13 @@
+{
+  "id": "feature-comparison.side-by-side",
+  "sectionType": "feature-comparison",
+  "layout": "side-by-side",
+  "style": ["modern-minimal", "corporate", "glassmorphism"],
+  "industry": ["saas-landing", "*"],
+  "tone": ["professional", "friendly"],
+  "entry": "FeatureComparisonCards.tsx",
+  "requires": ["lucide-react"],
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "usLabel": { "type": "string" }, "otherLabel": { "type": "string" }, "items": { "type": "array" } },
+  "complexity": "section",
+  "previewDescription": "Compact two-column check/cross comparison card — a lighter alternative to the sticky multi-row table."
+}

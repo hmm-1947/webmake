@@ -1,0 +1,4 @@
+'use client';
+import {useEffect,useState} from 'react';
+export interface StickyCtaFloatingProps { label?:string; href?:string; price?:string; }
+export default function StickyCtaFloating({label='Book this journey',href='#book',price='From $899'}:StickyCtaFloatingProps){const [show,setShow]=useState(false);useEffect(()=>{const f=()=>setShow(window.scrollY>500);window.addEventListener('scroll',f);return()=>window.removeEventListener('scroll',f)},[]);return show?<div className="fixed inset-x-4 bottom-5 z-50 mx-auto flex max-w-2xl items-center justify-between gap-4 rounded-2xl border border-border bg-background/90 p-3 pl-5 shadow-2xl backdrop-blur"><div><p className="text-xs text-muted-foreground">Starting at</p><p className="font-semibold">{price}</p></div><a href={href} className="rounded-xl bg-foreground px-5 py-3 text-sm font-semibold text-background">{label}</a></div>:null}

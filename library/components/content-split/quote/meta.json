@@ -1,0 +1,12 @@
+{
+  "id": "content-split.quote",
+  "sectionType": "content-split",
+  "layout": "text-quote",
+  "style": ["editorial-serif", "modern-minimal", "monochrome", "corporate"],
+  "industry": ["*"],
+  "tone": ["editorial", "professional", "minimal"],
+  "entry": "ContentSplitQuote.tsx",
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "body": { "type": "string" }, "quote": { "type": "string" }, "author": { "type": "string" }, "authorRole": { "type": "string" } },
+  "complexity": "section",
+  "previewDescription": "Asymmetric editorial content block paired with a large testimonial-style pull quote."
+}

@@ -1,0 +1,21 @@
+{
+  "meta": {"name":"Professional Travel Elements V3","description":"Showcase of immersive and interactive components for a premium travel website.","industry":"travel","tone":"luxury"},
+  "siteType":"ecommerce",
+  "designSystem":{"style":"editorial-serif","colors":{"mode":"light","primary":"#102a43","secondary":"#486581","accent":"#0f766e","background":"#ffffff","surface":"#f8fafc"},"typography":{"headingFont":"Plus Jakarta Sans","bodyFont":"Inter","scale":"comfortable"},"radius":"lg","density":"regular","shadowIntensity":"subtle"},
+  "animations":{"level":"moderate","scrollReveal":true,"hoverEffects":true,"library":"framer-motion"},
+  "pages":[{"path":"/","name":"Immersive Travel","isHome":true,"sections":[
+    {"type":"video-hero","layout":"cinematic","content":{"heading":"Go beyond the ordinary","videoUrl":"/videos/travel-hero.mp4"}},
+    {"type":"booking-search","layout":"hero-bar","content":{"heading":"Where will you go next?"}},
+    {"type":"text-reveal","layout":"word-by-word","content":{"heading":"Every journey deserves a story."}},
+    {"type":"experience-cards","layout":"hover-reveal","content":{"heading":"Curated experiences","items":[]}},
+    {"type":"parallax","layout":"image-depth","content":{"heading":"See the world differently"}},
+    {"type":"scroll-story","layout":"sticky-media","content":{"heading":"A journey designed around you"}},
+    {"type":"interactive-map","layout":"destinations","content":{"heading":"Choose your next destination"}},
+    {"type":"interactive-gallery","layout":"lightbox","content":{"heading":"Moments from the road","items":[]}},
+    {"type":"device-showcase","layout":"phone-frame","content":{"heading":"Your trip, wherever you are"}},
+    {"type":"review-wall","layout":"masonry","content":{"heading":"Loved by travelers","reviews":[]}},
+    {"type":"marquee","layout":"editorial","content":{"items":["DISCOVER","WANDER","EXPLORE","ESCAPE"]}},
+    {"type":"sticky-cta","layout":"floating","content":{"label":"Plan my trip","href":"#booking"}},
+    {"type":"footer","layout":"split-social","content":{"logoText":"Wanderly"}}
+  ]}]
+}

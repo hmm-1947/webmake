@@ -1,0 +1,23 @@
+{
+  "meta":{"name":"Professional Elements V4","description":"Expanded component showcase for unique premium website generation.","industry":"travel","tone":"luxury"},
+  "siteType":"ecommerce",
+  "designSystem":{"style":"editorial-serif","colors":{"mode":"light","primary":"#102a43","secondary":"#486581","accent":"#0f766e","background":"#ffffff","surface":"#f8fafc"},"typography":{"headingFont":"Plus Jakarta Sans","bodyFont":"Inter","scale":"comfortable"},"radius":"lg","density":"regular","shadowIntensity":"subtle"},
+  "animations":{"level":"moderate","scrollReveal":true,"hoverEffects":true,"library":"framer-motion"},
+  "pages":[{"path":"/","name":"Element Showcase","isHome":true,"sections":[
+    {"type":"announcement-bar","layout":"promo","content":{"message":"Early booking offers are now live"}},
+    {"type":"mega-menu","layout":"navigation","content":{"logo":"Wanderly","groups":[]}},
+    {"type":"video-hero","layout":"cinematic","content":{"heading":"Make your next journey extraordinary","videoUrl":"/videos/hero.mp4"}},
+    {"type":"booking-search","layout":"hero-bar","content":{"heading":"Find your perfect escape"}},
+    {"type":"filter-explorer","layout":"chips","content":{"categories":["All","Beach","Mountain","City","Adventure","Wellness"]}},
+    {"type":"experience-cards","layout":"hover-reveal","content":{"heading":"Curated experiences","items":[]}},
+    {"type":"horizontal-scroll","layout":"cards","content":{"heading":"Journeys worth taking","items":[]}},
+    {"type":"text-reveal","layout":"word-by-word","content":{"heading":"Travel is not about the destination. It is about the moments between."}},
+    {"type":"interactive-gallery","layout":"lightbox","content":{"heading":"A glimpse of the journey","items":[]}},
+    {"type":"number-counter","layout":"animated","content":{"items":[]}},
+    {"type":"process-steps","layout":"connected","content":{"steps":[]}},
+    {"type":"device-showcase","layout":"phone-frame","content":{"heading":"Your whole trip in your pocket"}},
+    {"type":"review-wall","layout":"masonry","content":{"heading":"Real travelers. Real stories.","reviews":[]}},
+    {"type":"sticky-cta","layout":"floating","content":{"label":"Start planning","href":"#booking"}},
+    {"type":"footer","layout":"split-social","content":{"logoText":"Wanderly"}}
+  ]}]
+}

@@ -102,6 +102,11 @@
         ]
       }
     },
+    "autoGenerateLinkedPages": {
+      "type": "boolean",
+      "default": true,
+      "description": "When true, internal href links found in section content automatically create missing pages during generation."
+    },
     "pages": {
       "type": "array",
       "minItems": 1,
@@ -130,7 +135,10 @@
                     "logo-cloud", "stats", "testimonials", "pricing", "faq",
                     "cta", "footer", "team", "gallery", "blog-list", "blog-post",
                     "contact", "about", "timeline", "comparison-table",
-                    "newsletter", "content-split", "video-showcase", "steps-process"
+                    "newsletter", "content-split", "video-showcase", "steps-process",
+                    "video-hero", "video-background", "scroll-story", "parallax",
+                    "destination-explorer", "booking-search", "marquee", "before-after",
+                    "itinerary", "interactive-map", "sticky-cta", "social-proof", "experience-cards", "interactive-gallery", "text-reveal", "device-showcase", "review-wall", "announcement-bar", "mega-menu", "horizontal-scroll", "number-counter", "filter-explorer", "process-steps", "full-bleed-media", "pricing-calculator", "feature-comparison", "availability-calendar"
                   ]
                 },
                 "layout": { "type": "string" },

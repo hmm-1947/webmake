@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "name": "Aurelia Journeys",
+    "description": "A premium multi-page travel booking experience with immersive visuals, discovery tools and booking flows.",
+    "industry": "travel",
+    "targetAudience": "Luxury and adventure travelers",
+    "tone": "luxury",
+    "siteUrl": "https://example.com/aurelia"
+  },
+  "siteType": "ecommerce",
+  "autoGenerateLinkedPages": true,
+  "designSystem": {
+    "style": "editorial-serif",
+    "colors": {"mode":"light","primary":"#102a43","secondary":"#486581","accent":"#0f766e","neutral":"#f1f5f9","background":"#ffffff","surface":"#f8fafc"},
+    "typography": {"headingFont":"Plus Jakarta Sans","bodyFont":"Inter","scale":"comfortable"},
+    "radius":"lg","density":"regular","shadowIntensity":"subtle"
+  },
+  "animations": {"level":"expressive","scrollReveal":true,"pageTransitions":true,"hoverEffects":true,"library":"framer-motion"},
+  "features": ["search","booking-calendar","map-embed","seo-meta","sitemap"],
+  "layout": {"maxWidth":"wide","navStyle":"top-simple","footerStyle":"multi-column"},
+  "pages": [
+    {
+      "path":"/","name":"Home","isHome":true,"description":"Discover extraordinary journeys and book your next escape.",
+      "sections":[
+        {"type":"announcement-bar","layout":"promo","content":{"message":"Early access: curated summer journeys now open →","href":"/offers"}},
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Destinations","href":"/destinations"},{"label":"Experiences","href":"/experiences"},{"label":"Journal","href":"/journal"},{"label":"About","href":"/about"}],"ctaLabel":"Plan a trip","ctaHref":"/booking"}},
+        {"type":"video-hero","layout":"cinematic","content":{"heading":"Go somewhere unforgettable","subheading":"Private journeys, remarkable stays and experiences designed around you.","videoUrl":"/videos/travel-hero.mp4","ctaLabel":"Explore journeys","ctaHref":"/destinations"}},
+        {"type":"booking-search","layout":"hero-bar","content":{"heading":"Find your perfect escape"}},
+        {"type":"experience-cards","layout":"hover-reveal","content":{"heading":"Journeys made to be remembered","items":[]}},
+        {"type":"horizontal-scroll","layout":"cards","content":{"heading":"Where will you go next?","items":[{"title":"Island mornings","description":"Slow days beside clear water."},{"title":"Mountain silence","description":"Cabins, trails and wide-open skies."},{"title":"City after dark","description":"Design, dining and culture."}]}},
+        {"type":"parallax","layout":"image-depth","content":{"heading":"Travel beyond the itinerary","subheading":"Build a journey around the moments you want to remember."}},
+        {"type":"interactive-map","layout":"destinations","content":{"heading":"Explore destinations","items":[]}},
+        {"type":"text-reveal","layout":"word-by-word","content":{"heading":"The best journeys leave you with stories you could never have planned."}},
+        {"type":"interactive-gallery","layout":"lightbox","content":{"heading":"Postcards from the road","items":[]}},
+        {"type":"review-wall","layout":"masonry","content":{"heading":"Trusted by curious travelers","reviews":[]}},
+        {"type":"sticky-cta","layout":"floating","content":{"label":"Start planning","href":"/booking"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/destinations","name":"Destinations","description":"Browse destinations and discover your next journey.",
+      "sections":[
+        {"type":"navbar","layout":"centered-logo","content":{"logoText":"Aurelia Journeys","links":[{"label":"Home","href":"/"},{"label":"Experiences","href":"/experiences"},{"label":"Journal","href":"/journal"},{"label":"Booking","href":"/booking"}],"ctaLabel":"Book now","ctaHref":"/booking"}},
+        {"type":"hero","layout":"split-image","content":{"heading":"Choose your next chapter","subheading":"From quiet islands to unforgettable cities."}},
+        {"type":"filter-explorer","layout":"chips","content":{"categories":["All","Beach","Mountain","City","Adventure","Wellness"]}},
+        {"type":"destination-explorer","layout":"cards","content":{"heading":"Featured destinations"}},
+        {"type":"interactive-map","layout":"destinations","content":{"heading":"Find your destination on the map"}},
+        {"type":"cta","layout":"split-image","content":{"heading":"Already know where you want to go?","ctaLabel":"Build your trip","ctaHref":"/booking"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/experiences","name":"Experiences","description":"Discover curated travel experiences for every kind of explorer.",
+      "sections":[
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Destinations","href":"/destinations"},{"label":"Journal","href":"/journal"},{"label":"About","href":"/about"}],"ctaLabel":"Book","ctaHref":"/booking"}},
+        {"type":"full-bleed-media","layout":"cinematic","content":{"heading":"Do more than visit","subheading":"Meet the people, places and moments behind the destination.","href":"/booking"}},
+        {"type":"experience-cards","layout":"hover-reveal","content":{"heading":"Curated experiences","items":[]}},
+        {"type":"before-after","layout":"image-compare","content":{"heading":"Before the journey / after the journey"}},
+        {"type":"itinerary","layout":"vertical","content":{"heading":"A sample day"}},
+        {"type":"availability-calendar","layout":"booking","content":{"heading":"Check experience availability","href":"/booking"}},
+        {"type":"footer","layout":"split-social","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/booking","name":"Booking","description":"Start planning and booking your Aurelia journey.",
+      "sections":[
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Destinations","href":"/destinations"},{"label":"Experiences","href":"/experiences"},{"label":"Journal","href":"/journal"}],"ctaLabel":"Need help?","ctaHref":"/contact"}},
+        {"type":"hero","layout":"centered","content":{"heading":"Let's plan your journey","subheading":"Choose your dates, travelers and preferred experience."}},
+        {"type":"availability-calendar","layout":"booking","content":{"heading":"Choose your dates","href":"/booking/confirm"}},
+        {"type":"pricing-calculator","layout":"interactive","content":{"heading":"Estimate your journey","basePrice":850,"href":"/booking/confirm"}},
+        {"type":"process-steps","layout":"connected","content":{"steps":[{"title":"Choose","description":"Pick a destination and experience."},{"title":"Customize","description":"Tell us what matters to you."},{"title":"Confirm","description":"Review and secure your journey."}]}},
+        {"type":"cta","layout":"centered-banner","content":{"heading":"Need a little help?","ctaLabel":"Talk to our travel team","ctaHref":"/contact"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/journal","name":"Journal","description":"Travel stories, guides and inspiration from Aurelia Journeys.",
+      "sections":[
+        {"type":"navbar","layout":"centered-logo","content":{"logoText":"Aurelia Journeys","links":[{"label":"Home","href":"/"},{"label":"Destinations","href":"/destinations"},{"label":"Experiences","href":"/experiences"},{"label":"About","href":"/about"}],"ctaLabel":"Plan a trip","ctaHref":"/booking"}},
+        {"type":"hero","layout":"gradient-minimal","content":{"heading":"The Aurelia Journal","subheading":"Stories, guides and ideas for curious travelers."}},
+        {"type":"blog-list","layout":"magazine","content":{"heading":"Latest stories"}},
+        {"type":"gallery","layout":"masonry","content":{"heading":"From our travels"}},
+        {"type":"newsletter","layout":"inline-card","content":{"heading":"Get the next story in your inbox"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/about","name":"About","description":"Learn about the people and philosophy behind Aurelia Journeys.",
+      "sections":[
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Home","href":"/"},{"label":"Destinations","href":"/destinations"},{"label":"Journal","href":"/journal"}],"ctaLabel":"Start planning","ctaHref":"/booking"}},
+        {"type":"hero","layout":"split-image","content":{"heading":"Travel, thoughtfully designed","subheading":"We believe the best journeys are personal, immersive and beautifully simple."}},
+        {"type":"about","layout":"story","content":{"heading":"Our approach"}},
+        {"type":"team","layout":"grid-4","content":{"heading":"Meet the people behind the journeys"}},
+        {"type":"feature-comparison","layout":"sticky","content":{"heading":"Why travelers choose Aurelia","items":[{"feature":"Personal planning","us":"Included","other":"Limited"},{"feature":"Curated stays","us":"Handpicked","other":"Standard listings"},{"feature":"Local expertise","us":"Dedicated team","other":"Varies"}]}},
+        {"type":"cta","layout":"gradient-split","content":{"heading":"Ready to see more of the world?","ctaLabel":"Explore destinations","ctaHref":"/destinations"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/contact","name":"Contact","description":"Contact the Aurelia travel team.",
+      "sections":[
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Home","href":"/"},{"label":"Booking","href":"/booking"}],"ctaLabel":"Destinations","ctaHref":"/destinations"}},
+        {"type":"contact","layout":"split-form","content":{"heading":"Tell us where you want to go"}},
+        {"type":"faq","layout":"two-column","content":{"heading":"Before you reach out"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    },
+    {
+      "path":"/offers","name":"Offers","description":"Current travel offers and seasonal journeys.",
+      "sections":[
+        {"type":"navbar","layout":"top-simple","content":{"logoText":"Aurelia Journeys","links":[{"label":"Home","href":"/"},{"label":"Destinations","href":"/destinations"}],"ctaLabel":"Book","ctaHref":"/booking"}},
+        {"type":"hero","layout":"centered","content":{"heading":"Seasonal offers","subheading":"Limited-time opportunities for your next journey."}},
+        {"type":"pricing","layout":"tiers-3","content":{"heading":"Choose your escape"}},
+        {"type":"comparison-table","layout":"feature-matrix","content":{"heading":"Compare packages"}},
+        {"type":"cta","layout":"centered-banner","content":{"heading":"Find your perfect offer","ctaLabel":"Start booking","ctaHref":"/booking"}},
+        {"type":"footer","layout":"multi-column","content":{"logoText":"Aurelia Journeys"}}
+      ]
+    }
+  ]
+}

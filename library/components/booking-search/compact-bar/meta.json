@@ -1,0 +1,13 @@
+{
+  "id": "booking-search.compact-bar",
+  "sectionType": "booking-search",
+  "layout": "compact-bar",
+  "style": ["modern-minimal", "corporate", "monochrome"],
+  "industry": ["restaurant", "*"],
+  "tone": ["professional", "friendly"],
+  "entry": "BookingSearchCompact.tsx",
+  "requires": ["lucide-react"],
+  "complexity": "composite",
+  "props": { "heading": { "type": "string" }, "partyLabel": { "type": "string" }, "submitLabel": { "type": "string" } },
+  "previewDescription": "Slim, single-row date + party-size search bar — a lighter-weight alternative to the full hero booking bar, better suited to non-hero placements."
+}

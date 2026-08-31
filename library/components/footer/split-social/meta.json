@@ -1,0 +1,23 @@
+{
+  "id": "footer.split-social",
+  "sectionType": "footer",
+  "layout": "split-social",
+  "style": ["modern-minimal", "dark-tech", "corporate", "monochrome"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "FooterSplitSocial.tsx",
+  "requires": ["lucide-react"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": false,
+  "animationLevel": ["none", "subtle"],
+  "props": {
+    "logoText": { "type": "string" },
+    "tagline": { "type": "string" },
+    "links": { "type": "array" },
+    "githubUrl": { "type": "string" },
+    "twitterUrl": { "type": "string" },
+    "linkedinUrl": { "type": "string" }
+  },
+  "previewDescription": "Single-row footer with logo/tagline on the left, inline links in the middle, and social icons on the right, plus a copyright line below — a compact alternative to the multi-column footer."
+}

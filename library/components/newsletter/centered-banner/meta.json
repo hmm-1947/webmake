@@ -1,0 +1,13 @@
+{
+  "id": "newsletter.centered-banner",
+  "sectionType": "newsletter",
+  "layout": "centered-banner",
+  "style": ["dark-tech", "corporate", "gradient-vibrant", "monochrome"],
+  "industry": ["*"],
+  "tone": ["bold", "professional", "premium"],
+  "entry": "NewsletterCenteredBanner.tsx",
+  "requires": ["lucide-react"],
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "subheading": { "type": "string" }, "buttonLabel": { "type": "string" }, "privacyText": { "type": "string" } },
+  "complexity": "section",
+  "previewDescription": "Full-bleed, high-contrast centered newsletter banner with icon badge and success state — a bolder alternative to the inline card."
+}

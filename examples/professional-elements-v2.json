@@ -1,0 +1,22 @@
+{
+  "meta":{"name":"Professional Elements V2 Showcase","description":"Showcase of immersive, interactive and travel-oriented elements added to the component library.","industry":"travel","tone":"luxury","siteUrl":"https://example.com"},
+  "siteType":"ecommerce",
+  "designSystem":{"style":"editorial-serif","colors":{"mode":"light","primary":"#0f172a","secondary":"#475569","accent":"#0ea5a4","neutral":"#f1f5f9","background":"#ffffff","surface":"#f8fafc"},"typography":{"headingFont":"Plus Jakarta Sans","bodyFont":"Inter","scale":"comfortable"},"radius":"lg","density":"relaxed","shadowIntensity":"subtle"},
+  "animations":{"level":"moderate","scrollReveal":true,"pageTransitions":true,"hoverEffects":true,"library":"framer-motion"},
+  "pages":[{"path":"/","name":"Professional Elements","isHome":true,"sections":[
+    {"type":"video-hero","layout":"cinematic","content":{"eyebrow":"Wander further","heading":"Travel should feel unforgettable","subheading":"Discover places that deserve more than a postcard.","videoUrl":"/videos/hero.mp4","posterUrl":"/images/hero.jpg","ctaLabel":"Explore destinations","ctaHref":"#destinations"}},
+    {"type":"booking-search","layout":"hero-bar","content":{"heading":"Where will you go next?","tabs":["Stays","Flights","Packages"]}},
+    {"type":"social-proof","layout":"trust-bar","content":{"heading":"Trusted by travelers worldwide"}},
+    {"type":"marquee","layout":"editorial","content":{"items":["DISCOVER","WANDER","EXPLORE","ESCAPE"]}},
+    {"type":"destination-explorer","layout":"cards","content":{"heading":"Explore extraordinary places"}},
+    {"type":"parallax","layout":"image-depth","content":{"label":"Featured escape","heading":"The world is waiting","subheading":"Go somewhere that changes your perspective.","imageUrl":"/images/destination.jpg"}},
+    {"type":"scroll-story","layout":"sticky-media","content":{"eyebrow":"The journey","heading":"Every trip has a story","items":[{"title":"Choose your place","text":"Start with a destination that inspires you."},{"title":"Build your route","text":"Shape the journey around your interests."},{"title":"Make memories","text":"Leave room for unexpected moments."}]}},
+    {"type":"video-background","layout":"overlay","content":{"heading":"See the world differently","subheading":"Immersive visuals make the destination feel closer.","videoUrl":"/videos/experience.mp4","posterUrl":"/images/experience.jpg"}},
+    {"type":"before-after","layout":"image-compare","content":{"heading":"Compare the experience","beforeUrl":"/images/before.jpg","afterUrl":"/images/after.jpg"}},
+    {"type":"interactive-map","layout":"destinations","content":{"heading":"Pick a destination"}},
+    {"type":"itinerary","layout":"vertical","content":{"heading":"A journey planned around you"}},
+    {"type":"video-showcase","layout":"browser-frame","content":{"heading":"See the experience in action","videoUrl":"/videos/demo.mp4"}},
+    {"type":"sticky-cta","layout":"floating","content":{"label":"Start booking","href":"#book","price":"From $899"}},
+    {"type":"footer","layout":"multi-column","content":{"logoText":"Wanderly"}}
+  ]}]
+}

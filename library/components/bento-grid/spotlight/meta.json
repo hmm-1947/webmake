@@ -1,0 +1,13 @@
+{
+  "id": "bento-grid.spotlight",
+  "sectionType": "bento-grid",
+  "layout": "spotlight",
+  "style": ["modern-minimal", "glassmorphism", "gradient-vibrant", "dark-tech"],
+  "industry": ["saas-landing", "portfolio", "agency", "startup", "restaurant"],
+  "tone": ["bold", "professional", "luxury"],
+  "entry": "BentoGridSpotlight.tsx",
+  "props": { "heading": { "type": "string" }, "subheading": { "type": "string" }, "items": { "type": "array" } },
+  "supportsAnimation": false,
+  "complexity": "section",
+  "previewDescription": "Image-led asymmetric bento layout with a dominant spotlight card and cinematic hover zoom."
+}

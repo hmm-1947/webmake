@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Preview</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:14px Inter,system-ui,sans-serif;background:#eef0f3;color:#17181b}
+.bar{position:sticky;top:0;height:52px;background:#111214;color:#fff;display:flex;align-items:center;gap:14px;padding:0 16px;z-index:10}
+.bar a{color:#fff;text-decoration:none;opacity:.75;font-size:13px;padding:6px 10px;border-radius:6px}
+.bar a.active{opacity:1;background:#242529}
+.bar .brand{font-weight:700;margin-right:8px}
+.bar .back{margin-left:auto;background:#fff;color:#111;padding:6px 12px;border-radius:7px;font-size:12px}
+.site{max-width:1180px;margin:24px auto;background:#fff;border-radius:12px;box-shadow:0 12px 35px #00000012;overflow:hidden;min-height:60vh}
+.section{padding:48px 7%}
+.section.hero{min-height:400px;display:flex;align-items:center;background:linear-gradient(120deg,#dfe7f1,#f7f3ed)}
+.section h2{font-size:30px;margin:0 0 8px}
+.section p{color:#6b7280;line-height:1.6}
+.badge{display:inline-block;padding:4px 8px;border-radius:20px;background:#eee;font-size:11px;margin-bottom:9px}
+.btn{display:inline-block;background:#111;color:#fff;padding:10px 15px;border-radius:7px;margin:5px 4px 0 0;text-decoration:none}
+.btn.secondary{background:#eee;color:#111}
+.media{margin-top:18px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#d9e2ec,#eee5d8);min-height:130px;display:grid;place-items:center;color:#667085}
+.media img,.media video{width:100%;max-height:420px;object-fit:cover;display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+.card{border:1px solid #e5e7eb;border-radius:14px;padding:18px;background:#fff}
+.empty{padding:60px;text-align:center;color:#777}
+</style></head>
+<body>
+<div class="bar" id="bar"><span class="brand">Preview</span><a class="back" href="/">← Back to editor</a></div>
+<div class="site" id="site"><div class="empty">Loading…</div></div>
+<script>
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function pathFromHash(){return decodeURIComponent(location.hash.slice(1))||null}
+async function load(){
+ const site=await (await fetch('/api/site')).json();
+ const pages=site.pages||[];
+ let current=pathFromHash();
+ if(!current||!pages.some(p=>(p.path||'/')===current)) current=(pages.find(p=>p.isHome)||pages[0]||{}).path||'/';
+ renderBar(pages,current);
+ renderPage(pages.find(p=>(p.path||'/')===current));
+ window.onhashchange=()=>{const c=pathFromHash();renderBar(pages,c);renderPage(pages.find(p=>(p.path||'/')===c))};
+}
+function renderBar(pages,current){
+ let h='<span class="brand">Preview</span>';
+ pages.forEach(p=>{const path=p.path||'/';h+=`<a href="#${encodeURIComponent(path)}" class="${path===current?'active':''}">${esc(p.name||path)}</a>`});
+ h+='<a class="back" href="/">← Back to editor</a>';
+ $('bar').innerHTML=h;
+}
+function renderPage(p){
+ if(!p){$('site').innerHTML='<div class="empty">Page not found.</div>';return}
+ let h='';
+ (p.sections||[]).forEach(s=>{
+  const c=s.content||{};
+  const heading=c.heading||c.title||String(s.type||'').replaceAll('-',' ');
+  const desc=c.description||c.subheading||'';
+  const isHero=/hero/i.test(s.type||'');
+  const media=c.videoUrl?`<div class="media"><video src="${esc(c.videoUrl)}" ${c.autoplay?'autoplay muted':''} ${c.loop?'loop':''} controls></video></div>`
+    :c.imageUrl?`<div class="media"><img src="${esc(c.imageUrl)}" alt=""></div>`:'';
+  const cards=Array.isArray(c.items)&&c.items.length?`<div class="cards">${c.items.map(x=>`<div class="card"><b>${esc(x.title||x.name||'')}</b><p>${esc(x.description||'')}</p></div>`).join('')}</div>`:'';
+  const btn1=c.primaryButton?`<a class="btn" href="${esc(typeof c.primaryButton==='object'?(c.primaryButton.href||'#'):'#')}">${esc(typeof c.primaryButton==='object'?c.primaryButton.label:c.primaryButton)}</a>`:'';
+  const btn2=c.secondaryButton?`<a class="btn secondary" href="${esc(typeof c.secondaryButton==='object'?(c.secondaryButton.href||'#'):'#')}">${esc(typeof c.secondaryButton==='object'?c.secondaryButton.label:c.secondaryButton)}</a>`:'';
+  h+=`<div class="section ${isHero?'hero':''}"><span class="badge">${esc(s.type)} · ${esc(s.layout||'default')}</span>${c.eyebrow?`<div style="font-size:12px;color:#777">${esc(c.eyebrow)}</div>`:''}<h2>${esc(heading)}</h2>${desc?`<p>${esc(desc)}</p>`:''}${btn1}${btn2}${media}${cards}</div>`;
+ });
+ $('site').innerHTML=h||'<div class="empty">This page has no sections.</div>';
+}
+load();
+</script>
+</body></html>

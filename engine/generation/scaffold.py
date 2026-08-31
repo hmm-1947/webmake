@@ -87,6 +87,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "**" },
+      { protocol: "http", hostname: "localhost" },
+      { protocol: "http", hostname: "127.0.0.1" },
     ],
   },
 };
@@ -418,19 +420,40 @@ def scaffold_project(
     registry: ComponentRegistry,
     output_dir: str,
     overwrite: bool = False,
+    preserve_node_modules: bool = False,
 ) -> dict:
-    """Writes a full Next.js project to output_dir. Returns a summary dict."""
+    """Writes a full Next.js project to output_dir. Returns a summary dict.
+
+    When preserve_node_modules is True and the directory already contains a
+    previous build, only the generated source (app/, components/generated/,
+    lib/, config files, public/assets) is replaced; node_modules and
+    package-lock.json are left untouched so a running `npm run dev` keeps
+    working and doesn't need a reinstall after every edit.
+    """
     if os.path.isdir(output_dir) and os.listdir(output_dir):
         if not overwrite:
             raise ScaffoldError(
                 f"Output directory '{output_dir}' is not empty. Pass overwrite=True to replace it."
             )
-        shutil.rmtree(output_dir)
+        if preserve_node_modules:
+            keep = {"node_modules", "package-lock.json", ".next"}
+            for entry in os.listdir(output_dir):
+                if entry in keep:
+                    continue
+                full = os.path.join(output_dir, entry)
+                if os.path.isdir(full):
+                    shutil.rmtree(full)
+                else:
+                    os.remove(full)
+        else:
+            shutil.rmtree(output_dir)
     os.makedirs(output_dir, exist_ok=True)
+
 
     app_root = os.path.join(output_dir, "app")
     components_root = os.path.join(output_dir, "components", "generated")
     lib_root = os.path.join(output_dir, "lib")
+    public_root = os.path.join(output_dir, "public", "assets")
 
     deps = resolve_dependencies(matches, registry, site.animations)
     dev_deps = resolve_dev_dependencies()
@@ -448,6 +471,12 @@ def scaffold_project(
     _write(os.path.join(app_root, "not-found.tsx"), _not_found_tsx(site))
     _write(os.path.join(app_root, "error.tsx"), _error_tsx())
     _write(os.path.join(lib_root, "utils.ts"), _cn_util())
+
+    # Bundle the built-in media library so generated sites remain self-contained.
+    assets_root = os.path.join(os.path.dirname(os.path.dirname(__file__)), "..", "library", "assets")
+    assets_root = os.path.abspath(assets_root)
+    if os.path.isdir(assets_root):
+        shutil.copytree(assets_root, public_root, dirs_exist_ok=True)
 
     # Copy every uniquely-needed component (including dependency closure) into
     # components/generated/<dotted.id>/ preserving its internal file(s), plus

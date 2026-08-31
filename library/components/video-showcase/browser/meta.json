@@ -1,0 +1,13 @@
+{
+  "id": "video-showcase.browser",
+  "sectionType": "video-showcase",
+  "layout": "browser-frame",
+  "style": ["modern-minimal", "dark-tech", "gradient-vibrant", "corporate"],
+  "industry": ["saas-landing", "startup", "app-landing", "agency", "marketing"],
+  "tone": ["professional", "bold", "technical"],
+  "entry": "VideoShowcaseBrowser.tsx",
+  "requires": ["lucide-react"],
+  "props": { "eyebrow": { "type": "string" }, "heading": { "type": "string" }, "subheading": { "type": "string" }, "videoUrl": { "type": "string" }, "thumbnailUrl": { "type": "string" }, "thumbnailAlt": { "type": "string" } },
+  "complexity": "section",
+  "previewDescription": "Product-demo section framed like a browser window, with embedded video or clickable thumbnail."
+}

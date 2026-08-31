@@ -1,0 +1,24 @@
+{
+  "id": "cta.gradient-split",
+  "sectionType": "cta",
+  "layout": "gradient-split",
+  "style": ["gradient-vibrant", "dark-tech", "modern-minimal", "corporate"],
+  "industry": ["*"],
+  "tone": ["bold", "professional"],
+  "entry": "CtaGradientSplit.tsx",
+  "requires": ["framer-motion", "lucide-react"],
+  "dependsOnComponents": ["ui.button"],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "ctaLabel": { "type": "string" },
+    "ctaHref": { "type": "string" },
+    "secondaryCtaLabel": { "type": "string" },
+    "secondaryCtaHref": { "type": "string" },
+    "stats": { "type": "array" }
+  },
+  "previewDescription": "Gradient banner CTA split into a headline+buttons column and a compact 3-stat strip, for sites that want to reinforce credibility right at the conversion moment."
+}

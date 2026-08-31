@@ -1,0 +1,20 @@
+{
+  "id": "steps-process.vertical-timeline",
+  "sectionType": "steps-process",
+  "layout": "vertical-timeline",
+  "style": ["modern-minimal", "editorial-serif", "corporate", "monochrome", "dark-tech"],
+  "industry": ["*"],
+  "tone": [],
+  "entry": "StepsVerticalTimeline.tsx",
+  "requires": ["framer-motion"],
+  "dependsOnComponents": [],
+  "complexity": "section",
+  "supportsAnimation": true,
+  "animationLevel": ["none", "subtle", "moderate", "expressive"],
+  "props": {
+    "heading": { "type": "string" },
+    "subheading": { "type": "string" },
+    "steps": { "type": "array" }
+  },
+  "previewDescription": "Single-column vertical timeline with a connecting line and numbered circles down the left side — reads well for narrower content or longer step descriptions than the horizontal layout."
+}
